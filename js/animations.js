@@ -1,121 +1,150 @@
 /**
- * GSAP & SCROLL ANIMATION ENGINE
- * Handles smooth staggered entrances, scroll reveals, and active section tracking.
+ * GSAP & SCROLL STORYTELLING ENGINE
+ * Handles SVG circuit path drawing, live telemetry counters, scroll elevator, and typewriter sequences.
  */
 
 export function initAnimations() {
-  // Check if GSAP is available
   const hasGSAP = typeof window.gsap !== 'undefined';
+  const hasScrollTrigger = typeof window.ScrollTrigger !== 'undefined';
 
-  if (hasGSAP) {
+  if (hasGSAP && hasScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+
     // 1. Hero Stagger Entrance
-    gsap.from('.hero-tag-badge', {
-      opacity: 0,
-      y: -20,
-      duration: 0.7,
-      ease: 'power3.out'
-    });
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    gsap.from('.hero-title', {
-      opacity: 0,
-      y: 30,
-      duration: 0.9,
-      delay: 0.15,
-      ease: 'power3.out'
-    });
+    heroTl.from('.hero-tag-badge', { opacity: 0, y: -20, duration: 0.6 })
+          .from('.hero-title', { opacity: 0, y: 30, duration: 0.8 }, '-=0.3')
+          .from('.hero-tagline', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
+          .from('.hero-cta-group', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
+          .from('.hero-event-card', { opacity: 0, scale: 0.96, duration: 0.8 }, '-=0.4')
+          .from('.telemetry-metric-card', { opacity: 0, y: 25, stagger: 0.1, duration: 0.6 }, '-=0.4');
 
-    gsap.from('.hero-tagline', {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-      delay: 0.3,
-      ease: 'power3.out'
-    });
+    // 2. SVG Circuit Path Drawing on Scroll
+    document.querySelectorAll('.pcb-circuit-line').forEach((line) => {
+      const length = line.getTotalLength ? line.getTotalLength() : 300;
+      gsap.set(line, { strokeDasharray: length, strokeDashoffset: length });
 
-    gsap.from('.hero-cta-group', {
-      opacity: 0,
-      y: 20,
-      duration: 0.8,
-      delay: 0.45,
-      ease: 'power3.out'
-    });
-
-    gsap.from('.hero-event-card', {
-      opacity: 0,
-      scale: 0.95,
-      duration: 1,
-      delay: 0.35,
-      ease: 'back.out(1.4)'
-    });
-
-    // 2. Scroll Trigger Reveals for Section Cards
-    if (typeof window.ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-
-      document.querySelectorAll('.section').forEach((section) => {
-        const header = section.querySelector('.section-header');
-        if (header) {
-          gsap.from(header, {
-            scrollTrigger: {
-              trigger: header,
-              start: 'top 85%',
-              toggleActions: 'play none none none'
-            },
-            opacity: 0,
-            y: 30,
-            duration: 0.7,
-            ease: 'power2.out'
-          });
-        }
-
-        const cards = section.querySelectorAll('.nb-card');
-        if (cards.length > 0) {
-          gsap.from(cards, {
-            scrollTrigger: {
-              trigger: section,
-              start: 'top 80%',
-              toggleActions: 'play none none none'
-            },
-            opacity: 0,
-            y: 35,
-            stagger: 0.1,
-            duration: 0.7,
-            ease: 'power2.out'
-          });
-        }
+      gsap.to(line, {
+        scrollTrigger: {
+          trigger: line.closest('.section') || line,
+          start: 'top 80%',
+          end: 'bottom 40%',
+          scrub: 1.2
+        },
+        strokeDashoffset: 0,
+        ease: 'none'
       });
-    }
-  } else {
-    // Fallback using native IntersectionObserver if GSAP CDN is blocked
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+    });
 
-    document.querySelectorAll('.section-header, .nb-card').forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-      observer.observe(el);
+    // 3. Section Chapter Reveals
+    document.querySelectorAll('.section').forEach((section) => {
+      const titlebar = section.querySelector('.terminal-titlebar');
+      const header = section.querySelector('.section-header');
+      const cards = section.querySelectorAll('.nb-card, .dossier-card, .project-cartridge');
+
+      if (titlebar) {
+        gsap.from(titlebar, {
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 0,
+          y: -15,
+          duration: 0.5,
+          ease: 'power2.out'
+        });
+      }
+
+      if (header) {
+        gsap.from(header, {
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 0,
+          y: 25,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      }
+
+      if (cards.length > 0) {
+        gsap.from(cards, {
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 0,
+          y: 30,
+          stagger: 0.08,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      }
+    });
+
+    // 4. Telemetry Metric Counter Rollups
+    document.querySelectorAll('[data-counter-target]').forEach((counter) => {
+      const targetVal = parseFloat(counter.getAttribute('data-counter-target') || '0');
+      const isInteger = Number.isInteger(targetVal);
+
+      gsap.to(counter, {
+        scrollTrigger: {
+          trigger: counter,
+          start: 'top 88%',
+          toggleActions: 'play none none none'
+        },
+        innerHTML: targetVal,
+        duration: 1.8,
+        ease: 'power2.out',
+        snap: isInteger ? { innerHTML: 1 } : { innerHTML: 0.1 }
+      });
     });
   }
 
-  // Active section scroll spy
-  initScrollSpy();
+  // 5. Live HUD Clock & Telemetry Ticker
+  initHudTelemetry();
+
+  // 6. Scroll Elevator Tracker (Active Rail)
+  initScrollElevator();
+
+  // 7. Oscilloscope Live Sine Generator
+  initOscilloscope();
 }
 
-function initScrollSpy() {
+function initHudTelemetry() {
+  const clockEl = document.getElementById('hud-clock');
+  const freqEl = document.getElementById('hud-freq');
+
+  function updateClock() {
+    if (!clockEl) return;
+    const now = new Date();
+    clockEl.innerText = now.toTimeString().split(' ')[0] + ' UTC+5:30';
+  }
+
+  function updateFreq() {
+    if (!freqEl) return;
+    const jitter = (24.00 + (Math.random() - 0.5) * 0.04).toFixed(2);
+    freqEl.innerText = `${jitter} MHz`;
+  }
+
+  setInterval(updateClock, 1000);
+  setInterval(updateFreq, 2500);
+  updateClock();
+  updateFreq();
+}
+
+function initScrollElevator() {
+  const elevatorNodes = document.querySelectorAll('.elevator-node');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
   window.addEventListener('scroll', () => {
     let currentId = '';
-    const scrollPos = window.scrollY + 200;
+    const scrollPos = window.scrollY + 250;
 
     sections.forEach((section) => {
       const top = section.offsetTop;
@@ -125,11 +154,44 @@ function initScrollSpy() {
       }
     });
 
-    navLinks.forEach((link) => {
-      link.classList.remove('active');
+    elevatorNodes.forEach((node) => {
+      const target = node.getAttribute('href').replace('#', '');
+      if (target === currentId) {
+        node.classList.add('active');
+      } else {
+        node.classList.remove('active');
+      }
+    });
+
+    // Also sync header nav links
+    document.querySelectorAll('.nav-link[href^="#"]').forEach((link) => {
       if (link.getAttribute('href') === `#${currentId}`) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   }, { passive: true });
+}
+
+function initOscilloscope() {
+  const wavePath = document.getElementById('oscilloscope-wave');
+  if (!wavePath) return;
+
+  let phase = 0;
+  function drawWave() {
+    requestAnimationFrame(drawWave);
+    phase += 0.08;
+
+    let d = 'M 0 27 ';
+    const width = 300;
+    for (let x = 0; x <= width; x += 6) {
+      const y = 27 + Math.sin(x * 0.06 + phase) * 14 * Math.cos(phase * 0.3);
+      d += `L ${x} ${y.toFixed(1)} `;
+    }
+
+    wavePath.setAttribute('d', d);
+  }
+
+  drawWave();
 }

@@ -1,10 +1,11 @@
 /**
  * EECS Club IISER Bhopal — Main Application Script
- * Clean UI interactions, Project Filtering, Gallery Lightbox, and 5-Theme Switcher.
+ * Orchestrates Cyber-Deck UI, ASCII Hardware Lab, Lore Console, and Gallery Lightbox.
  */
 
 import { initTextScramble, initCircuitCanvas, refreshCanvasTheme } from './reactbits.js';
 import { initAnimations } from './animations.js';
+import { terminalEasterEggs, siteConfig, coreTeam, projects } from './data.js';
 
 const THEME_LABELS = {
   'kanagawa': { icon: '🐲', name: 'KANAGAWA' },
@@ -15,73 +16,28 @@ const THEME_LABELS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize Visual Effects & Background Canvas
+  // 1. Initialize Visual Effects, Canvas & Animations
   initCircuitCanvas();
   initTextScramble();
   initAnimations();
 
-  // 2. Multi-Theme Switcher System (5 Themes)
-  const themeBtn = document.getElementById('theme-btn');
-  const themeMenu = document.getElementById('theme-menu');
-  const themeBtnIcon = document.getElementById('theme-btn-icon');
-  const themeBtnLabel = document.getElementById('theme-btn-label');
-  const themeOptions = document.querySelectorAll('[data-set-theme]');
-
+  // 2. Multi-Theme Core Engine (Locked to Kanagawa Dragon by Default)
   function applyTheme(themeId) {
     if (!THEME_LABELS[themeId]) themeId = 'kanagawa';
-    
     document.documentElement.setAttribute('data-theme', themeId);
     localStorage.setItem('eecs_theme', themeId);
-
-    // Update Button Label & Icon
-    if (themeBtnIcon) themeBtnIcon.innerText = THEME_LABELS[themeId].icon;
-    if (themeBtnLabel) themeBtnLabel.innerText = THEME_LABELS[themeId].name;
-
-    // Update active dropdown items
-    themeOptions.forEach((opt) => {
-      if (opt.getAttribute('data-set-theme') === themeId) {
-        opt.classList.add('active');
-      } else {
-        opt.classList.remove('active');
-      }
-    });
-
-    // Refresh canvas particle colors to match current theme
     setTimeout(() => {
       refreshCanvasTheme();
     }, 50);
   }
 
-  // Load saved theme or default to kanagawa
   const savedTheme = localStorage.getItem('eecs_theme') || 'kanagawa';
   applyTheme(savedTheme);
 
-  if (themeBtn && themeMenu) {
-    themeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = themeMenu.classList.toggle('open');
-      themeBtn.setAttribute('aria-expanded', isOpen);
-    });
+  // 3. Interactive Retro Lore Terminal Console
+  initTerminalConsole(applyTheme);
 
-    themeOptions.forEach((opt) => {
-      opt.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const themeId = opt.getAttribute('data-set-theme');
-        applyTheme(themeId);
-        themeMenu.classList.remove('open');
-        themeBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!themeBtn.contains(e.target) && !themeMenu.contains(e.target)) {
-        themeMenu.classList.remove('open');
-        themeBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  // 3. Mobile Navigation Drawer
+  // 4. Mobile Navigation Drawer
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileDrawer = document.getElementById('mobile-drawer');
 
@@ -100,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Project Filter System
+  // 5. Project Filter System
   const filterBtns = document.querySelectorAll('.nb-filter-tab');
   const projectCards = document.querySelectorAll('.project-card');
 
@@ -124,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Gallery Lightbox Modal
+  // 6. Gallery Lightbox Modal
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
@@ -164,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Back to Top Button
+  // 7. Back to Top Button
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {
     backToTop.addEventListener('click', (e) => {
@@ -173,3 +129,80 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+function initTerminalConsole(applyThemeFn) {
+  const terminalInput = document.getElementById('terminal-input');
+  const terminalOutput = document.getElementById('terminal-output');
+  const terminalChips = document.querySelectorAll('.lore-chip');
+
+  if (!terminalInput || !terminalOutput) return;
+
+  function runCommand(cmd) {
+    const raw = cmd.trim();
+    if (!raw) return;
+
+    const parts = raw.toLowerCase().split(' ');
+    const mainCmd = parts[0];
+    const arg = parts[1];
+
+    let response = '';
+
+    if (mainCmd === 'clear') {
+      terminalOutput.innerHTML = '';
+      terminalInput.value = '';
+      return;
+    } else if (mainCmd === 'help') {
+      response = terminalEasterEggs['help'];
+    } else if (mainCmd === 'lore') {
+      response = terminalEasterEggs['lore'];
+    } else if (mainCmd === 'whoami') {
+      response = terminalEasterEggs['whoami'];
+    } else if (mainCmd === 'contact') {
+      response = terminalEasterEggs['contact'];
+    } else if (mainCmd === 'team') {
+      response = `[EECS CLUB ROSTER SUMMARY // 20 MEMBERS]\n` +
+        coreTeam.map((m, i) => `  [#${(i+1).toString().padStart(2, '0')}] ${m.name.padEnd(18)} | ${m.department}`).join('\n');
+    } else if (mainCmd === 'projects') {
+      response = `[EECS CLUB ACTIVE PROJECTS]\n` +
+        projects.map((p) => `  • [${p.category.toUpperCase()}] ${p.title} (Lead: ${p.doneBy})`).join('\n');
+    } else if (mainCmd === 'stats') {
+      response = `[TELEMETRY STATS]\n` +
+        siteConfig.stats.map(s => `  ${s.label}: ${s.value}${s.suffix}`).join('\n');
+    } else if (mainCmd === 'theme') {
+      if (arg && THEME_LABELS[arg]) {
+        applyThemeFn(arg);
+        response = `[SUCCESS] Theme switched to "${THEME_LABELS[arg].name}".`;
+      } else {
+        response = `[ERROR] Invalid theme. Available: kanagawa, tokyo-night, gruvbox, nord, acid`;
+      }
+    } else {
+      response = `Command not found: "${raw}". Type "help" for available commands.`;
+    }
+
+    const commandBlock = document.createElement('div');
+    commandBlock.className = 'lore-terminal-output';
+    commandBlock.innerHTML = `<span style="color: var(--dragon-gold); font-weight: 700;">guest@iiserb:~$</span> ${escapeHtml(raw)}\n<span style="color: var(--text-white);">${escapeHtml(response)}</span>`;
+    terminalOutput.appendChild(commandBlock);
+
+    terminalInput.value = '';
+    const screen = terminalOutput.parentElement;
+    screen.scrollTop = screen.scrollHeight;
+  }
+
+  terminalInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      runCommand(terminalInput.value);
+    }
+  });
+
+  terminalChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const cmd = chip.getAttribute('data-cmd');
+      runCommand(cmd);
+    });
+  });
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
