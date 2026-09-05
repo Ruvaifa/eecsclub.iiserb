@@ -53,6 +53,7 @@
       <span class="hud-stat-chip">BUS: <strong id="hud-freq">24.00 MHz</strong></span>
     </div>
     <div class="hud-telemetry-right">
+      <span class="hud-stat-chip">THEME: <strong id="hud-theme">KANAGAWA</strong></span>
       <span class="hud-stat-chip">SYS: <strong>NOMINAL</strong></span>
       <span class="hud-stat-chip">TIME: <strong id="hud-clock">00:00:00 UTC</strong></span>
     </div>
@@ -193,6 +194,28 @@
 
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-drawer" class="mobile-nav-drawer" aria-hidden="true">
+      <div class="mobile-theme-section">
+        <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold); display: block; margin-bottom: 0.6rem; letter-spacing: 0.05em; font-weight: 700;">
+          // COLOR THEMES:
+        </span>
+        <div class="mobile-theme-grid">
+          <button class="theme-option active" data-set-theme="kanagawa">
+            <span>[🐲] Kanagawa</span>
+          </button>
+          <button class="theme-option" data-set-theme="tokyo-night">
+            <span>[🌃] Tokyo Night</span>
+          </button>
+          <button class="theme-option" data-set-theme="gruvbox">
+            <span>[📻] Gruvbox</span>
+          </button>
+          <button class="theme-option" data-set-theme="nord">
+            <span>[❄️] Nord</span>
+          </button>
+          <button class="theme-option" data-set-theme="acid" style="grid-column: span 2;">
+            <span>[⚡] Acid Neubrutal</span>
+          </button>
+        </div>
+      </div>
       <a href="#home" class="nav-link">Home</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#achievements" class="nav-link">Achievements</a>
