@@ -1,0 +1,268 @@
+/* ==========================================================================
+   MULTI-THEME DESIGN SYSTEM
+   5 Curated Themes:
+   1. Kanagawa Dragon (Default)
+   2. Tokyo Night (Cyberpunk)
+   3. Gruvbox Dark (Warm Retro Terminal)
+   4. Nord Arctic (Clean Nordic Frost)
+   5. Acid Neubrutal (High-Contrast Cyber Gold & Hot Coral)
+   ========================================================================== */
+
+/* --- Default: Kanagawa Dragon --- */
+:root, html[data-theme="kanagawa"] {
+  --theme-name: "Kanagawa Dragon";
+  --bg-deep-ink: #12120f;
+  --bg-dragon: #181616;
+  --bg-surface: #1f1d20;
+  --bg-surface-raised: #282528;
+  --bg-surface-high: #322e33;
+
+  --text-white: #c8c093;
+  --text-old-white: #dcd7ba;
+  --text-muted: #8a9a86;
+  --text-dim: #727169;
+  --text-black: #12120f;
+
+  --dragon-red: #c84053;
+  --dragon-red-bright: #e46876;
+  --dragon-gold: #e6c384;
+  --dragon-gold-bright: #f0d197;
+  --dragon-green: #8a9a86;
+  --dragon-green-bright: #98bb6c;
+  --dragon-aqua: #7aa89f;
+  --dragon-blue: #658594;
+  --dragon-purple: #957fb8;
+  --dragon-orange: #ffa066;
+
+  --border-color: #282528;
+  --border-dark: #12120f;
+  --border-primary: var(--dragon-red);
+  --border-secondary: var(--dragon-gold);
+  --canvas-p1: #c84053;
+  --canvas-p2: #e6c384;
+  --canvas-p3: #8a9a86;
+}
+
+/* --- Theme 2: Tokyo Night (Cyberpunk) --- */
+html[data-theme="tokyo-night"] {
+  --theme-name: "Tokyo Night";
+  --bg-deep-ink: #0f1017;
+  --bg-dragon: #16161e;
+  --bg-surface: #1a1b26;
+  --bg-surface-raised: #24283b;
+  --bg-surface-high: #2f3549;
+
+  --text-white: #c0caf5;
+  --text-old-white: #ffffff;
+  --text-muted: #7aa2f7;
+  --text-dim: #565f89;
+  --text-black: #0f1017;
+
+  --dragon-red: #f7768e;
+  --dragon-red-bright: #ff9eaf;
+  --dragon-gold: #e0af68;
+  --dragon-gold-bright: #ffc777;
+  --dragon-green: #73daca;
+  --dragon-green-bright: #9ece6a;
+  --dragon-aqua: #7dcfff;
+  --dragon-blue: #2ac3de;
+  --dragon-purple: #bb9af7;
+  --dragon-orange: #ff9e64;
+
+  --border-color: #24283b;
+  --border-dark: #0f1017;
+  --border-primary: #7dcfff;
+  --border-secondary: #f7768e;
+  --canvas-p1: #7dcfff;
+  --canvas-p2: #bb9af7;
+  --canvas-p3: #f7768e;
+}
+
+/* --- Theme 3: Gruvbox Dark (Warm Retro Terminal) --- */
+html[data-theme="gruvbox"] {
+  --theme-name: "Gruvbox Dark";
+  --bg-deep-ink: #141617;
+  --bg-dragon: #1d2021;
+  --bg-surface: #282828;
+  --bg-surface-raised: #32302f;
+  --bg-surface-high: #3c3836;
+
+  --text-white: #ebdbb2;
+  --text-old-white: #fbf1c7;
+  --text-muted: #d5c4a1;
+  --text-dim: #928374;
+  --text-black: #141617;
+
+  --dragon-red: #cc241d;
+  --dragon-red-bright: #fb4934;
+  --dragon-gold: #d79921;
+  --dragon-gold-bright: #fabd2f;
+  --dragon-green: #98971a;
+  --dragon-green-bright: #b8bb26;
+  --dragon-aqua: #689d6a;
+  --dragon-blue: #83a598;
+  --dragon-purple: #d3869b;
+  --dragon-orange: #fe8019;
+
+  --border-color: #3c3836;
+  --border-dark: #141617;
+  --border-primary: #fe8019;
+  --border-secondary: #fabd2f;
+  --canvas-p1: #fe8019;
+  --canvas-p2: #fabd2f;
+  --canvas-p3: #b8bb26;
+}
+
+/* --- Theme 4: Nord Arctic (Clean Nordic Frost) --- */
+html[data-theme="nord"] {
+  --theme-name: "Nord Arctic";
+  --bg-deep-ink: #1d212a;
+  --bg-dragon: #242933;
+  --bg-surface: #2e3440;
+  --bg-surface-raised: #3b4252;
+  --bg-surface-high: #434c5e;
+
+  --text-white: #d8dee9;
+  --text-old-white: #eceff4;
+  --text-muted: #88c0d0;
+  --text-dim: #707d96;
+  --text-black: #1d212a;
+
+  --dragon-red: #bf616a;
+  --dragon-red-bright: #d08770;
+  --dragon-gold: #ebcb8b;
+  --dragon-gold-bright: #f0d8a8;
+  --dragon-green: #a3be8c;
+  --dragon-green-bright: #b5d29e;
+  --dragon-aqua: #88c0d0;
+  --dragon-blue: #81a1c1;
+  --dragon-purple: #b48ead;
+  --dragon-orange: #d08770;
+
+  --border-color: #3b4252;
+  --border-dark: #1d212a;
+  --border-primary: #88c0d0;
+  --border-secondary: #ebcb8b;
+  --canvas-p1: #88c0d0;
+  --canvas-p2: #81a1c1;
+  --canvas-p3: #a3be8c;
+}
+
+/* --- Theme 5: Acid Neubrutal (Cyber Gold & Hot Coral) --- */
+html[data-theme="acid"] {
+  --theme-name: "Acid Neubrutal";
+  --bg-deep-ink: #0a0a0c;
+  --bg-dragon: #121216;
+  --bg-surface: #18181f;
+  --bg-surface-raised: #23232c;
+  --bg-surface-high: #2f2f3c;
+
+  --text-white: #f4f4f6;
+  --text-old-white: #ffffff;
+  --text-muted: #ffe600;
+  --text-dim: #7e7e94;
+  --text-black: #0a0a0c;
+
+  --dragon-red: #ff2a5f;
+  --dragon-red-bright: #ff5480;
+  --dragon-gold: #ffe600;
+  --dragon-gold-bright: #fff04d;
+  --dragon-green: #00ff88;
+  --dragon-green-bright: #33ffa0;
+  --dragon-aqua: #00f0ff;
+  --dragon-blue: #00b4d8;
+  --dragon-purple: #c77dff;
+  --dragon-orange: #ff7b00;
+
+  --border-color: #23232c;
+  --border-dark: #0a0a0c;
+  --border-primary: #ffe600;
+  --border-secondary: #ff2a5f;
+  --canvas-p1: #ffe600;
+  --canvas-p2: #00f0ff;
+  --canvas-p3: #ff2a5f;
+}
+
+/* Global Structural Variables */
+:root {
+  --border-thick: 3px solid var(--border-color);
+  --border-medium: 2px solid var(--border-color);
+  --border-thin: 1px solid var(--border-color);
+
+  /* Hard Box Shadows */
+  --shadow-red: 4px 4px 0px var(--dragon-red);
+  --shadow-gold: 4px 4px 0px var(--dragon-gold);
+  --shadow-green: 4px 4px 0px var(--dragon-green);
+  --shadow-aqua: 4px 4px 0px var(--dragon-aqua);
+  --shadow-dark: 5px 5px 0px var(--border-dark);
+  --shadow-dark-lg: 6px 6px 0px var(--border-dark);
+
+  /* Typography Fonts */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-vt: 'VT323', monospace;
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-sharp: 0px;
+  --radius-retro: 2px;
+
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --max-width-site: 1280px;
+  --header-height: 72px;
+}
+
+/* Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+  background-color: var(--bg-deep-ink);
+  color: var(--text-white);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-deep-ink);
+  color: var(--text-white);
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-deep-ink);
+  border-left: 2px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dragon-red);
+  border: 2px solid var(--bg-deep-ink);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dragon-gold);
+}
+
+::selection {
+  background-color: var(--dragon-red);
+  color: var(--text-old-white);
+}

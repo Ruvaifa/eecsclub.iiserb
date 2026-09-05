@@ -1,0 +1,201 @@
+/* ==========================================================================
+   8-BIT PIXEL ART & RETRO COMPUTING DESIGN LAYER
+   Retro typography, CRT scanlines, LED indicators, 8-bit borders & grid
+   ========================================================================== */
+
+/* --- Font Utility Classes --- */
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: -0.02em;
+}
+
+.font-vt {
+  font-family: var(--font-vt);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* --- Retro Pixel Header & Section Headings --- */
+.retro-title {
+  font-family: var(--font-pixel);
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  line-height: 1.35;
+  color: var(--text-old-white);
+  text-shadow: 3px 3px 0px var(--dragon-red);
+  margin-bottom: 0.75rem;
+}
+
+.retro-subtitle {
+  font-family: var(--font-mono);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 700px;
+}
+
+.retro-wordmark {
+  font-family: var(--font-pixel);
+  font-size: 1.1rem;
+  color: var(--text-old-white);
+  text-shadow: 2px 2px 0px var(--dragon-red);
+  letter-spacing: 0.02em;
+}
+
+/* --- Retro 8-Bit Pixel Borders --- */
+.pixel-box {
+  background: var(--bg-surface);
+  position: relative;
+  border: 3px solid var(--border-dark);
+  box-shadow: 
+    -3px 0 0 0 var(--border-dark),
+    3px 0 0 0 var(--border-dark),
+    0 -3px 0 0 var(--border-dark),
+    0 3px 0 0 var(--border-dark);
+}
+
+/* --- Retro LED Blinking Status Indicator --- */
+.led-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 0px;
+  border: 1px solid #12120f;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.led-green {
+  background-color: #98bb6c;
+  box-shadow: 0 0 8px #98bb6c, 0 0 2px #ffffff;
+  animation: pulse-led 2s infinite ease-in-out;
+}
+
+.led-red {
+  background-color: var(--dragon-red-bright);
+  box-shadow: 0 0 8px var(--dragon-red), 0 0 2px #ffffff;
+  animation: pulse-led 1.6s infinite ease-in-out;
+}
+
+.led-gold {
+  background-color: var(--dragon-gold);
+  box-shadow: 0 0 8px var(--dragon-gold), 0 0 2px #ffffff;
+  animation: pulse-led 2.4s infinite ease-in-out;
+}
+
+@keyframes pulse-led {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+}
+
+/* --- Terminal Command Prompt Prefix --- */
+.terminal-prompt {
+  font-family: var(--font-mono);
+  color: var(--dragon-gold);
+  user-select: none;
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+
+.terminal-prompt::before {
+  content: ">";
+  color: var(--dragon-red-bright);
+  margin-right: 0.25rem;
+}
+
+/* --- Retro CRT Scanlines & Screen Texture Overlay --- */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.015),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.015)
+  );
+  background-size: 100% 3px, 3px 100%;
+  opacity: 0.6;
+}
+
+/* --- Pixel Grid Canvas Backdrop --- */
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+  opacity: 0.85;
+}
+
+/* --- Retro Stat Counter / Meter --- */
+.retro-meter {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.retro-meter-block {
+  width: 8px;
+  height: 12px;
+  background-color: #282528;
+  border: 1px solid #12120f;
+}
+
+.retro-meter-block.filled-red {
+  background-color: var(--dragon-red);
+}
+
+.retro-meter-block.filled-gold {
+  background-color: var(--dragon-gold);
+}
+
+.retro-meter-block.filled-green {
+  background-color: var(--dragon-green);
+}
+
+/* --- 8-Bit Corner Accents --- */
+.corner-accent {
+  position: relative;
+}
+
+.corner-accent::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--dragon-gold);
+  border-left: 2px solid var(--dragon-gold);
+  pointer-events: none;
+}
+
+.corner-accent::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid var(--dragon-gold);
+  border-right: 2px solid var(--dragon-gold);
+  pointer-events: none;
+}

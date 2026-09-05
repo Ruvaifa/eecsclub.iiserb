@@ -1,0 +1,21 @@
+{
+  "name": "eecsclub-iiserb",
+  "version": "2.0.0",
+  "private": true,
+  "description": "EECS Club IISER Bhopal Website — Zero-Dependency Vanilla Stack",
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "start": "npx serve . -p 3000",
+    "preview": "npx serve ."
+  },
+  "keywords": [
+    "eecs",
+    "iiserb",
+    "iiser-bhopal",
+    "kanagawa-dragon",
+    "neubrutalism",
+    "vanilla-js"
+  ],
+  "author": "EECS Club IISER Bhopal",
+  "license": "MIT"
+}

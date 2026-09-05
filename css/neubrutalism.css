@@ -1,0 +1,279 @@
+/* ==========================================================================
+   NEUBRUTALISM UI COMPONENT SYSTEM
+   Solid high-contrast borders, hard unblurred box-shadows, sharp geometry.
+   Clean, stable hover states (zero tilting or jarring transforms).
+   ========================================================================== */
+
+/* --- Neubrutalist Card Surface Base --- */
+.nb-card {
+  background-color: var(--bg-surface);
+  border: 3px solid var(--border-dark);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  border-radius: var(--radius-sharp);
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nb-card-accent-red {
+  border-color: var(--border-dark);
+  box-shadow: 4px 4px 0px var(--dragon-red);
+}
+
+.nb-card-accent-red:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0px var(--dragon-red);
+}
+
+.nb-card-accent-gold {
+  border-color: var(--border-dark);
+  box-shadow: 4px 4px 0px var(--dragon-gold);
+}
+
+.nb-card-accent-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0px var(--dragon-gold);
+}
+
+.nb-card-accent-green {
+  border-color: var(--border-dark);
+  box-shadow: 4px 4px 0px var(--dragon-green);
+}
+
+.nb-card-accent-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0px var(--dragon-green);
+}
+
+.nb-card-accent-aqua {
+  border-color: var(--border-dark);
+  box-shadow: 4px 4px 0px var(--dragon-aqua);
+}
+
+.nb-card-accent-aqua:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 6px 0px var(--dragon-aqua);
+}
+
+/* Card Header Strip */
+.nb-card-header {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--bg-dragon);
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.nb-card-body {
+  padding: 1.5rem;
+}
+
+/* --- Neubrutalist Buttons --- */
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.8rem 1.3rem;
+  border-radius: var(--radius-sharp);
+  border: 2px solid var(--border-dark);
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  user-select: none;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+/* Primary Button */
+.nb-btn-primary {
+  background-color: var(--dragon-red);
+  color: #ffffff;
+  box-shadow: 3px 3px 0px var(--border-dark);
+}
+
+.nb-btn-primary:hover {
+  background-color: var(--dragon-red-bright);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  color: #ffffff;
+}
+
+.nb-btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--border-dark);
+}
+
+/* Secondary Button: Gold */
+.nb-btn-gold {
+  background-color: var(--dragon-gold);
+  color: var(--text-black);
+  box-shadow: 3px 3px 0px var(--border-dark);
+}
+
+.nb-btn-gold:hover {
+  background-color: var(--dragon-gold-bright);
+  box-shadow: 4px 4px 0px var(--border-dark);
+}
+
+.nb-btn-gold:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--border-dark);
+}
+
+/* Outline / Surface Button */
+.nb-btn-outline {
+  background-color: var(--bg-surface);
+  color: var(--text-white);
+  border: 2px solid var(--dragon-red);
+  box-shadow: 3px 3px 0px var(--dragon-red);
+}
+
+.nb-btn-outline:hover {
+  background-color: var(--dragon-red);
+  color: #ffffff;
+}
+
+.nb-btn-outline:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--border-dark);
+}
+
+/* Ghost / Terminal Button */
+.nb-btn-ghost {
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 2px solid var(--border-color);
+  box-shadow: 2px 2px 0px var(--border-dark);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.nb-btn-ghost:hover {
+  background-color: var(--bg-surface-raised);
+  color: var(--dragon-gold);
+  border-color: var(--dragon-gold);
+}
+
+.nb-btn-ghost:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--border-dark);
+}
+
+/* Small Button Modifier */
+.nb-btn-sm {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.65rem;
+  box-shadow: 2px 2px 0px var(--border-dark);
+}
+
+/* Icon-only Button */
+.nb-icon-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-surface);
+  color: var(--text-white);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px var(--border-dark);
+  border-radius: var(--radius-sharp);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.nb-icon-btn:hover {
+  background-color: var(--dragon-red);
+  color: #ffffff;
+  border-color: var(--dragon-red);
+  box-shadow: 3px 3px 0px var(--dragon-gold);
+}
+
+.nb-icon-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--border-dark);
+}
+
+/* --- Neubrutalist Badges & Tags --- */
+.nb-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-sharp);
+  border: 2px solid var(--border-dark);
+  box-shadow: 2px 2px 0px var(--border-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+.nb-tag-red {
+  background-color: rgba(200, 64, 83, 0.2);
+  color: var(--dragon-red-bright);
+  border-color: var(--dragon-red);
+}
+
+.nb-tag-gold {
+  background-color: rgba(230, 195, 132, 0.18);
+  color: var(--dragon-gold);
+  border-color: var(--dragon-gold);
+}
+
+.nb-tag-green {
+  background-color: rgba(138, 154, 134, 0.2);
+  color: var(--dragon-green-bright);
+  border-color: var(--dragon-green);
+}
+
+.nb-tag-aqua {
+  background-color: rgba(122, 168, 159, 0.2);
+  color: var(--dragon-aqua);
+  border-color: var(--dragon-aqua);
+}
+
+.nb-tag-purple {
+  background-color: rgba(149, 127, 184, 0.2);
+  color: var(--dragon-purple);
+  border-color: var(--dragon-purple);
+}
+
+.nb-tag-dark {
+  background-color: var(--bg-deep-ink);
+  color: var(--text-dim);
+  border-color: var(--border-color);
+}
+
+/* --- Neubrutalist Filter Tabs --- */
+.nb-filter-tab {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  border: 2px solid var(--border-color);
+  box-shadow: 3px 3px 0px var(--border-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.nb-filter-tab:hover {
+  color: var(--dragon-gold);
+  border-color: var(--dragon-gold);
+}
+
+.nb-filter-tab.active {
+  background-color: var(--dragon-red);
+  color: #ffffff;
+  border-color: var(--dragon-red);
+  box-shadow: 3px 3px 0px var(--border-dark);
+}
