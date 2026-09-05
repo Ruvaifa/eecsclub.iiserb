@@ -12,11 +12,11 @@
   
   <meta property="og:title" content="EECS Club IISER Bhopal" />
   <meta property="og:description" content="Power the Future. Design Circuits. Engineer Tomorrow." />
-  <meta property="og:image" content="/assets/logo.png" />
+  <meta property="og:image" content="/assets/logo.webp" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="icon" type="image/webp" href="assets/logo.webp" />
   <link rel="shortcut icon" href="assets/favicon.ico" />
 
   <!-- Google Fonts: Press Start 2P, VT323, Space Mono, Inter -->
@@ -41,19 +41,65 @@
 </head>
 <body>
 
-  <!-- Retro Canvas Background & CRT Texture -->
+  <!-- Retro Canvas Background & CRT Texture Overlay -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
   <div class="crt-overlay" aria-hidden="true"></div>
 
-  <!-- Site Structure -->
+  <!-- Top HUD Telemetry Bar -->
+  <div class="hud-telemetry-bar">
+    <div class="hud-telemetry-left">
+      <span class="hud-stat-chip"><span class="led-indicator led-green"></span>NODE: <strong>IISERB_EECS</strong></span>
+      <span class="hud-stat-chip">LOC: <strong>23.2845° N, 77.2764° E</strong></span>
+      <span class="hud-stat-chip">BUS: <strong id="hud-freq">24.00 MHz</strong></span>
+    </div>
+    <div class="hud-telemetry-right">
+      <span class="hud-stat-chip">SYS: <strong>NOMINAL</strong></span>
+      <span class="hud-stat-chip">TIME: <strong id="hud-clock">00:00:00 UTC</strong></span>
+    </div>
+  </div>
+
+  <!-- Side Vertical Scroll Elevator Rail -->
+  <nav class="scroll-elevator-rail" aria-label="Chapter Elevator">
+    <a href="#home" class="elevator-node active" title="Chapter 00: Boot">
+      <span class="elevator-dot"></span>
+      <span class="elevator-label">00_BOOT</span>
+    </a>
+    <a href="#about" class="elevator-node" title="Chapter 01: Directive">
+      <span class="elevator-dot"></span>
+      <span class="elevator-label">01_DIRECTIVE</span>
+    </a>
+    <a href="#team" class="elevator-node" title="Chapter 02: Research Roster">
+      <span class="elevator-dot"></span>
+      <span class="elevator-label">02_ROSTER</span>
+    </a>
+    <a href="#projects" class="elevator-node" title="Chapter 03: Schematics">
+      <span class="elevator-dot"></span>
+      <span class="elevator-label">03_SCHEMATICS</span>
+    </a>
+    <a href="#gallery" class="elevator-node" title="Chapter 04: Archives">
+      <span class="elevator-dot"></span>
+      <span class="elevator-label">04_ARCHIVES</span>
+    </a>
+    <a href="#resources" class="elevator-node" title="Chapter 05: Vault">
+      <span class="elevator-dot"></span>
+      <span class="elevator-label">05_VAULT</span>
+    </a>
+    <a href="#join" class="elevator-node" title="Chapter 06: Transmit">
+      <span class="elevator-dot"></span>
+      <span class="elevator-label">06_TRANSMIT</span>
+    </a>
+  </nav>
+
+  <!-- Site Content Wrapper -->
   <div class="site-wrapper">
 
     <!-- Sticky Navigation Bar -->
     <header class="navbar">
       <div class="nav-container">
         <a href="#home" class="nav-brand">
-          <img src="assets/logo.png" alt="EECS Club Logo" class="nav-logo" width="36" height="36" />
+          <span class="nav-brand-badge font-pixel">[⚡]</span>
           <span class="retro-wordmark">EECS CLUB</span>
+          <span class="nav-sub-chip font-mono">// IISERB</span>
         </a>
 
         <nav>
@@ -69,58 +115,6 @@
         </nav>
 
         <div class="nav-actions">
-          
-          <!-- Theme Switcher Dropdown -->
-          <div class="theme-selector-wrapper">
-            <button id="theme-btn" class="theme-btn-current" aria-haspopup="true" aria-expanded="false" title="Switch Theme">
-              <span id="theme-btn-icon">🎨</span>
-              <span id="theme-btn-label">THEME</span>
-              <span style="font-size: 0.65rem;">▼</span>
-            </button>
-            <div id="theme-menu" class="theme-dropdown-menu" role="menu">
-              <button class="theme-option active" data-set-theme="kanagawa">
-                <span>[🐲] Kanagawa Dragon</span>
-                <span class="theme-preview-dots">
-                  <span class="theme-preview-dot" style="background:#c84053;"></span>
-                  <span class="theme-preview-dot" style="background:#e6c384;"></span>
-                  <span class="theme-preview-dot" style="background:#8a9a86;"></span>
-                </span>
-              </button>
-              <button class="theme-option" data-set-theme="tokyo-night">
-                <span>[🌃] Tokyo Night</span>
-                <span class="theme-preview-dots">
-                  <span class="theme-preview-dot" style="background:#7dcfff;"></span>
-                  <span class="theme-preview-dot" style="background:#bb9af7;"></span>
-                  <span class="theme-preview-dot" style="background:#f7768e;"></span>
-                </span>
-              </button>
-              <button class="theme-option" data-set-theme="gruvbox">
-                <span>[📻] Gruvbox Dark</span>
-                <span class="theme-preview-dots">
-                  <span class="theme-preview-dot" style="background:#fe8019;"></span>
-                  <span class="theme-preview-dot" style="background:#fabd2f;"></span>
-                  <span class="theme-preview-dot" style="background:#b8bb26;"></span>
-                </span>
-              </button>
-              <button class="theme-option" data-set-theme="nord">
-                <span>[❄️] Nord Arctic</span>
-                <span class="theme-preview-dots">
-                  <span class="theme-preview-dot" style="background:#88c0d0;"></span>
-                  <span class="theme-preview-dot" style="background:#81a1c1;"></span>
-                  <span class="theme-preview-dot" style="background:#ebcb8b;"></span>
-                </span>
-              </button>
-              <button class="theme-option" data-set-theme="acid">
-                <span>[⚡] Acid Neubrutal</span>
-                <span class="theme-preview-dots">
-                  <span class="theme-preview-dot" style="background:#ffe600;"></span>
-                  <span class="theme-preview-dot" style="background:#ff2a5f;"></span>
-                  <span class="theme-preview-dot" style="background:#00f0ff;"></span>
-                </span>
-              </button>
-            </div>
-          </div>
-
           <a href="#join" class="nb-btn nb-btn-primary nb-btn-sm">
             JOIN CLUB
           </a>
@@ -148,11 +142,11 @@
       </div>
     </div>
 
-    <!-- Main Content Container -->
+    <!-- Main Content Stream -->
     <main>
 
       <!-- ====================================================================
-           1. HERO SECTION (#home)
+           CHAPTER 00: HERO BOOT SEQUENCE (#home)
            ==================================================================== -->
       <section id="home" class="hero-section">
         <div class="container">
@@ -165,6 +159,14 @@
                   <span class="led-indicator led-green"></span>
                   SYSTEM STATUS: ACTIVE // IISER BHOPAL
                 </span>
+              </div>
+
+              <!-- Live Oscilloscope Sine Waveform Box -->
+              <div class="oscilloscope-box" title="System Clock Signal">
+                <div class="oscilloscope-grid"></div>
+                <svg width="100%" height="100%" viewBox="0 0 300 54" preserveAspectRatio="none" style="position: relative; z-index: 2;">
+                  <path id="oscilloscope-wave" class="oscilloscope-wave-path" d="M 0 27 L 300 27"></path>
+                </svg>
               </div>
 
               <div class="hero-title-container">
@@ -208,29 +210,38 @@
               </div>
             </div>
 
-            <!-- Right Hero Column: Next Event Card -->
+            <!-- Right Hero Column: Next Event Terminal Card -->
             <div class="hero-event-card">
-              <div class="nb-card nb-card-accent-red">
-                <div class="nb-card-header">
-                  <span class="nb-tag nb-tag-red">
-                    <span class="led-indicator led-red"></span>
-                    NEXT EVENT
-                  </span>
-                  <span class="font-pixel" style="font-size: 0.65rem; color: var(--dragon-gold);">ID: 0x01</span>
+              <div class="terminal-window nb-card-accent-red">
+                <div class="terminal-titlebar">
+                  <span>[■] EVENT_DAEMON.EXE</span>
+                  <div class="terminal-controls">
+                    <span>—</span>
+                    <span>□</span>
+                    <span>✕</span>
+                  </div>
                 </div>
                 
                 <div class="nb-card-body">
-                  <h3 class="font-pixel" style="font-size: 1.05rem; line-height: 1.4; color: var(--text-old-white); margin-bottom: 0.5rem;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                    <span class="nb-tag nb-tag-red">
+                      <span class="led-indicator led-red"></span>
+                      UPCOMING NOTICE
+                    </span>
+                    <span class="font-mono" style="font-size: 0.72rem; color: var(--dragon-gold);">CYCLE_2025.09</span>
+                  </div>
+
+                  <h3 class="font-pixel" style="font-size: 1rem; line-height: 1.4; color: var(--text-old-white); margin-bottom: 0.35rem;">
                     TRAINEE APPLICATIONS OPEN
                   </h3>
                   <p class="font-mono" style="font-size: 0.85rem; color: var(--dragon-gold); margin-bottom: 1.25rem;">
                     TO EECS CLUB
                   </p>
 
-                  <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--text-muted); border-top: 2px dashed var(--border-color); padding-top: 1rem;">
+                  <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.82rem; color: var(--text-muted); border-top: 1px dashed var(--border-color); padding-top: 0.85rem;">
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                       <span style="color: var(--dragon-red-bright);">[📅]</span>
-                      <span>Sept 15, 2025 • 2:30 PM to Sept 26, 2025 • 6:30 PM</span>
+                      <span>Sept 15, 2025 • 2:30 PM – Sept 26, 2025 • 6:30 PM</span>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                       <span style="color: var(--dragon-green-bright);">[🌐]</span>
@@ -242,15 +253,47 @@
             </div>
 
           </div>
+
+          <!-- Telemetry Live Metrics Grid -->
+          <div class="telemetry-metrics-grid">
+            <div class="telemetry-metric-card">
+              <div class="telemetry-metric-num"><span data-counter-target="2024">0</span></div>
+              <div class="telemetry-metric-label">Year Founded</div>
+            </div>
+            <div class="telemetry-metric-card">
+              <div class="telemetry-metric-num"><span data-counter-target="20">0</span>+</div>
+              <div class="telemetry-metric-label">Core Engineers</div>
+            </div>
+            <div class="telemetry-metric-card">
+              <div class="telemetry-metric-num"><span data-counter-target="6">0</span></div>
+              <div class="telemetry-metric-label">Flagship Systems</div>
+            </div>
+            <div class="telemetry-metric-card">
+              <div class="telemetry-metric-num"><span data-counter-target="17">0</span> DOF</div>
+              <div class="telemetry-metric-label">Humanoid Robot</div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       <!-- ====================================================================
-           2. ABOUT SECTION (#about)
+           CHAPTER 01: DIRECTIVE & MISSION (#about)
            ==================================================================== -->
       <section id="about" class="section">
         <div class="container">
           
+          <div class="terminal-window" style="margin-bottom: 2.5rem;">
+            <div class="terminal-titlebar">
+              <span>[■] DIRECTIVE_MANIFEST.SYS // CHAPTER_01</span>
+              <div class="terminal-controls">
+                <span>—</span>
+                <span>□</span>
+                <span>✕</span>
+              </div>
+            </div>
+          </div>
+
           <div class="section-header">
             <div class="section-tag">// 0x01_ABOUT</div>
             <h2 class="retro-title">About <span data-scramble style="color: var(--dragon-gold);">EECS Club</span></h2>
@@ -300,14 +343,14 @@
                 <span class="nb-tag nb-tag-aqua">DIRECTIVE // MISSION</span>
               </div>
               <div class="nb-card-body">
-                <h3 class="font-pixel" style="font-size: 1.25rem; color: var(--text-old-white); margin-bottom: 1rem;">
+                <h3 class="font-pixel" style="font-size: 1.15rem; color: var(--text-old-white); margin-bottom: 1rem;">
                   Our <span style="color: var(--dragon-aqua);">Mission</span>
                 </h3>
-                <p style="font-size: 1rem; color: var(--text-white); line-height: 1.7; margin-bottom: 1.5rem;">
+                <p style="font-size: 0.95rem; color: var(--text-white); line-height: 1.7; margin-bottom: 1.5rem;">
                   To create a vibrant community of tech enthusiasts who collaborate, learn, and build innovative solutions to real-world problems.
                 </p>
 
-                <h4 class="font-mono" style="font-size: 0.9rem; font-weight: 700; color: var(--dragon-gold); margin-bottom: 0.75rem;">
+                <h4 class="font-mono" style="font-size: 0.88rem; font-weight: 700; color: var(--dragon-gold); margin-bottom: 0.75rem;">
                   [>] WHAT WE DO:
                 </h4>
                 <ul class="mission-activity-list">
@@ -320,9 +363,45 @@
               </div>
             </div>
 
-            <!-- Workspace Visual Image -->
-            <div class="about-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Students collaborating on tech projects" loading="lazy" />
+            <!-- Core Focus & Technical Domains Blueprint Card -->
+            <div class="nb-card nb-card-accent-gold">
+              <div class="nb-card-header">
+                <span class="nb-tag nb-tag-gold">BLUEPRINT // CORE DOMAINS</span>
+                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">SYSTEM_SPEC_v2</span>
+              </div>
+              <div class="nb-card-body" style="display: flex; flex-direction: column; gap: 1rem;">
+                
+                <div style="background-color: var(--bg-deep-ink); border: 2px solid var(--border-color); padding: 0.9rem;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-gold);">[01] SILICON & HARDWARE</span>
+                    <span class="nb-tag nb-tag-dark" style="font-size: 0.65rem;">HARDWARE</span>
+                  </div>
+                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
+                    Microcontrollers (ESP32 / Arduino), VLSI, PCB routing, sensor matrices, robotics control, and IoT systems.
+                  </p>
+                </div>
+
+                <div style="background-color: var(--bg-deep-ink); border: 2px solid var(--border-color); padding: 0.9rem;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-red-bright);">[02] INTELLIGENT SYSTEMS</span>
+                    <span class="nb-tag nb-tag-dark" style="font-size: 0.65rem;">AI / ML</span>
+                  </div>
+                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
+                    Diffusion Transformers, Deep Reinforcement Learning, Computer Vision, algorithmic trading, and PyTorch models.
+                  </p>
+                </div>
+
+                <div style="background-color: var(--bg-deep-ink); border: 2px solid var(--border-color); padding: 0.9rem;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span class="font-pixel" style="font-size: 0.8rem; color: var(--dragon-aqua);">[03] APPLIED COMPUTING</span>
+                    <span class="nb-tag nb-tag-dark" style="font-size: 0.65rem;">SOFTWARE</span>
+                  </div>
+                  <p class="font-mono" style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
+                    Real-time C++ OpenGL physics simulation engines, fullstack web architectures, and quantitative engineering toolchains.
+                  </p>
+                </div>
+
+              </div>
             </div>
 
           </div>
@@ -331,10 +410,21 @@
       </section>
 
       <!-- ====================================================================
-           3. TEAM SECTION (#team)
+           CHAPTER 02: RESEARCH ROSTER & TEAM (#team)
            ==================================================================== -->
       <section id="team" class="section">
         <div class="container">
+
+          <div class="terminal-window" style="margin-bottom: 2.5rem;">
+            <div class="terminal-titlebar">
+              <span>[■] PERSONNEL_ROSTER.DB // CHAPTER_02</span>
+              <div class="terminal-controls">
+                <span>—</span>
+                <span>□</span>
+                <span>✕</span>
+              </div>
+            </div>
+          </div>
 
           <div class="section-header">
             <div class="section-tag">// 0x02_CREW</div>
@@ -350,14 +440,16 @@
           <div class="faculty-grid">
             
             <!-- Dr. Arijit Sen -->
-            <div class="nb-card nb-card-accent-gold">
-              <div class="nb-card-header">
-                <span class="nb-tag nb-tag-gold">FACULTY ADVISOR</span>
-                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">EECS Dept</span>
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// CLEARANCE: FACULTY_MENTOR</span>
+                <div class="dossier-barcode">
+                  <span style="width: 2px;"></span><span style="width: 4px;"></span><span style="width: 1px;"></span><span style="width: 3px;"></span>
+                </div>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/faculty1.png" alt="Dr. Arijit Sen" class="member-avatar" loading="lazy" />
+                  <img src="assets/faculty1.webp" alt="Dr. Arijit Sen" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Dr. Arijit Sen</h4>
                 <p class="member-role">Faculty Advisor</p>
@@ -377,14 +469,16 @@
             </div>
 
             <!-- Dr. Haroon Rashid Lone -->
-            <div class="nb-card nb-card-accent-gold">
-              <div class="nb-card-header">
-                <span class="nb-tag nb-tag-gold">FACULTY ADVISOR</span>
-                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">EECS Dept</span>
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// CLEARANCE: FACULTY_MENTOR</span>
+                <div class="dossier-barcode">
+                  <span style="width: 3px;"></span><span style="width: 1px;"></span><span style="width: 4px;"></span><span style="width: 2px;"></span>
+                </div>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/faculty2.png" alt="Dr. Haroon Rashid Lone" class="member-avatar" loading="lazy" />
+                  <img src="assets/faculty2.webp" alt="Dr. Haroon Rashid Lone" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Dr. Haroon Rashid Lone</h4>
                 <p class="member-role">Faculty Advisor</p>
@@ -413,14 +507,16 @@
           <div class="coordinators-grid">
 
             <!-- Vishvajeet Singh -->
-            <div class="nb-card nb-card-accent-red">
-              <div class="nb-card-header">
-                <span class="nb-tag nb-tag-red">FOUNDER</span>
-                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">Graduate</span>
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// CLEARANCE: LEVEL_0 // FOUNDER</span>
+                <div class="dossier-barcode">
+                  <span style="width: 2px;"></span><span style="width: 3px;"></span><span style="width: 1px;"></span>
+                </div>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/vishu_bhaiya.jpeg" alt="Vishvajeet Singh" class="member-avatar" loading="lazy" />
+                  <img src="assets/vishu_bhaiya.webp" alt="Vishvajeet Singh" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Vishvajeet Singh</h4>
                 <p class="member-role">Founder EECS Club</p>
@@ -437,14 +533,16 @@
             </div>
 
             <!-- Pranay Meshram -->
-            <div class="nb-card nb-card-accent-red">
-              <div class="nb-card-header">
-                <span class="nb-tag nb-tag-red">COORDINATOR</span>
-                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">3rd Year</span>
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// CLEARANCE: LEVEL_1 // LEAD</span>
+                <div class="dossier-barcode">
+                  <span style="width: 1px;"></span><span style="width: 4px;"></span><span style="width: 2px;"></span>
+                </div>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Pranay_image.png" alt="Pranay Meshram" class="member-avatar" loading="lazy" />
+                  <img src="assets/Pranay_image.webp" alt="Pranay Meshram" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Pranay Meshram</h4>
                 <p class="member-role">Coordinator</p>
@@ -467,14 +565,16 @@
             </div>
 
             <!-- Mohammad Ruvaifa -->
-            <div class="nb-card nb-card-accent-red">
-              <div class="nb-card-header">
-                <span class="nb-tag nb-tag-red">COORDINATOR</span>
-                <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">2nd Year</span>
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// CLEARANCE: LEVEL_1 // LEAD</span>
+                <div class="dossier-barcode">
+                  <span style="width: 2px;"></span><span style="width: 2px;"></span><span style="width: 4px;"></span>
+                </div>
               </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Ruvaifa.jpeg" alt="Mohammad Ruvaifa" class="member-avatar" loading="lazy" />
+                  <img src="assets/Ruvaifa.webp" alt="Mohammad Ruvaifa" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Mohammad Ruvaifa</h4>
                 <p class="member-role">Coordinator</p>
@@ -506,10 +606,13 @@
           <div class="core-team-grid">
 
             <!-- 1. Agolika -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x01 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Agolika_image.png" alt="Agolika" class="member-avatar" loading="lazy" />
+                  <img src="assets/Agolika_image.webp" alt="Agolika" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Agolika</h4>
                 <p class="member-role">Core Committee</p>
@@ -524,10 +627,13 @@
             </div>
 
             <!-- 2. Divyam Sood -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x02 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Divyam_image.jpg" alt="Divyam Sood" class="member-avatar" loading="lazy" />
+                  <img src="assets/Divyam_image.webp" alt="Divyam Sood" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Divyam Sood</h4>
                 <p class="member-role">Core Committee</p>
@@ -545,15 +651,18 @@
             </div>
 
             <!-- 3. Anmol Agarwal -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x03 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Anmol_image.jpg" alt="Anmol Agarwal" class="member-avatar" loading="lazy" />
+                  <img src="assets/Anmol_image.webp" alt="Anmol Agarwal" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Anmol Agarwal</h4>
                 <p class="member-role">Core Committee</p>
                 <p class="member-dept-year">EECS • 3rd Year</p>
-                <p class="member-bio">Neural nets make my brain go brr.</p>
+                <p class="member-bio">neural nets make my brain go brr.</p>
                 <div class="member-socials">
                   <a href="https://github.com/anm-ol" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -569,10 +678,13 @@
             </div>
 
             <!-- 4. Prashant Gupta -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x04 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/prashant_image.png" alt="Prashant Gupta" class="member-avatar" loading="lazy" />
+                  <img src="assets/prashant_image.webp" alt="Prashant Gupta" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Prashant Gupta</h4>
                 <p class="member-role">Core Committee</p>
@@ -593,10 +705,13 @@
             </div>
 
             <!-- 5. Shubham Mohanty -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x05 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/shubammonty_image.png" alt="Shubham Mohanty" class="member-avatar" loading="lazy" />
+                  <img src="assets/shubammonty_image.webp" alt="Shubham Mohanty" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Shubham Mohanty</h4>
                 <p class="member-role">Core Committee</p>
@@ -604,7 +719,7 @@
                 <p class="member-bio">Jack of some trades, master of none.</p>
                 <div class="member-socials">
                   <a href="https://github.com/shubhammohanty" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                   </a>
                   <a href="https://www.linkedin.com/in/shubhammohanty" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="LinkedIn">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -617,10 +732,13 @@
             </div>
 
             <!-- 6. Ramandeep -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x06 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Ramandeep - Ramanola Granola.jpeg" alt="Ramandeep" class="member-avatar" loading="lazy" />
+                  <img src="assets/ramandeep.webp" alt="Ramandeep" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Ramandeep</h4>
                 <p class="member-role">Core Committee</p>
@@ -641,10 +759,13 @@
             </div>
 
             <!-- 7. Gourangi Verma -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x07 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/gourangi_image.jpg" alt="Gourangi Verma" class="member-avatar" loading="lazy" />
+                  <img src="assets/gourangi_image.webp" alt="Gourangi Verma" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Gourangi Verma</h4>
                 <p class="member-role">Core Committee</p>
@@ -665,10 +786,13 @@
             </div>
 
             <!-- 8. Dharani Thota -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x08 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Dharani_image.jpeg" alt="Dharani Thota" class="member-avatar" loading="lazy" />
+                  <img src="assets/Dharani_image.webp" alt="Dharani Thota" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Dharani Thota</h4>
                 <p class="member-role">Core Committee</p>
@@ -689,10 +813,13 @@
             </div>
 
             <!-- 9. Shubham -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x09 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Shubham_image.jpeg" alt="Shubham" class="member-avatar" loading="lazy" />
+                  <img src="assets/Shubham_image.webp" alt="Shubham" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Shubham</h4>
                 <p class="member-role">Core Committee</p>
@@ -710,10 +837,13 @@
             </div>
 
             <!-- 10. Aryan Sanjot -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x10 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Profile - Aryan Sanjot.jpg" alt="Aryan Sanjot" class="member-avatar" loading="lazy" />
+                  <img src="assets/aryan_sanjot.webp" alt="Aryan Sanjot" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Aryan Sanjot</h4>
                 <p class="member-role">Core Committee</p>
@@ -734,10 +864,13 @@
             </div>
 
             <!-- 11. Prajyot Nula -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x11 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Prajyot_image.png" alt="Prajyot Nula" class="member-avatar" loading="lazy" />
+                  <img src="assets/Prajyot_image.webp" alt="Prajyot Nula" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Prajyot Nula</h4>
                 <p class="member-role">Core Committee</p>
@@ -758,10 +891,13 @@
             </div>
 
             <!-- 12. Nikhil Vashisht -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x12 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Nikhil_image.jpg" alt="Nikhil Vashisht" class="member-avatar" loading="lazy" />
+                  <img src="assets/Nikhil_image.webp" alt="Nikhil Vashisht" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Nikhil Vashisht</h4>
                 <p class="member-role">Core Committee</p>
@@ -782,10 +918,13 @@
             </div>
 
             <!-- 13. Yashmeet -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x13 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Yashmeet_image.jpg" alt="Yashmeet" class="member-avatar" loading="lazy" />
+                  <img src="assets/Yashmeet_image.webp" alt="Yashmeet" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Yashmeet</h4>
                 <p class="member-role">Core Committee</p>
@@ -800,15 +939,18 @@
             </div>
 
             <!-- 14. Shafwan Safi -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x14 // DEV</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/Shafwan_image.png" alt="Shafwan Safi" class="member-avatar" loading="lazy" />
+                  <img src="assets/Shafwan_image.webp" alt="Shafwan Safi" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Shafwan Safi</h4>
                 <p class="member-role">Core Committee / Dev</p>
                 <p class="member-dept-year">Engineering Science • 2nd Year</p>
-                <p class="member-bio">AI, web dev, and trading bots — if it runs on code, I’ll break and fix it.</p>
+                <p class="member-bio">AI, web dev, and trading bots — basically, if it runs on code, I’ll break and fix it.</p>
                 <div class="member-socials">
                   <a href="https://github.com/Shafwansafi06" target="_blank" rel="noopener noreferrer" class="nb-icon-btn" aria-label="GitHub">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -824,10 +966,13 @@
             </div>
 
             <!-- 15. Vansh Mangal -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x15 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/mangal.jpg" alt="Vansh Mangal" class="member-avatar" loading="lazy" />
+                  <img src="assets/mangal.webp" alt="Vansh Mangal" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Vansh Mangal</h4>
                 <p class="member-role">Core Committee</p>
@@ -845,10 +990,13 @@
             </div>
 
             <!-- 16. Ishaan Jena -->
-            <div class="nb-card nb-card-accent-green">
+            <div class="dossier-card">
+              <div class="dossier-header-strip">
+                <span>// ID: 0x16 // CORE</span>
+              </div>
               <div class="nb-card-body">
                 <div class="member-avatar-container">
-                  <img src="assets/ishaan_image.png" alt="Ishaan Jena" class="member-avatar" loading="lazy" />
+                  <img src="assets/ishaan_image.webp" alt="Ishaan Jena" class="member-avatar" loading="lazy" />
                 </div>
                 <h4 class="member-name">Ishaan Jena</h4>
                 <p class="member-role">Core Committee</p>
@@ -868,10 +1016,21 @@
       </section>
 
       <!-- ====================================================================
-           4. PROJECTS SHOWCASE SECTION (#projects)
+           CHAPTER 03: HARDWARE & AI SCHEMATICS (#projects)
            ==================================================================== -->
       <section id="projects" class="section">
         <div class="container">
+
+          <div class="terminal-window" style="margin-bottom: 2.5rem;">
+            <div class="terminal-titlebar">
+              <span>[■] HARDWARE_SCHEMATICS.CAD // CHAPTER_03</span>
+              <div class="terminal-controls">
+                <span>—</span>
+                <span>□</span>
+                <span>✕</span>
+              </div>
+            </div>
+          </div>
 
           <div class="section-header">
             <div class="section-tag">// 0x03_SHOWCASE</div>
@@ -893,10 +1052,11 @@
           <div class="projects-grid">
 
             <!-- 1. DreamLab -->
-            <div class="nb-card nb-card-accent-red project-card" data-category="AI & ML">
+            <div class="project-cartridge nb-card-accent-red project-card" data-category="AI & ML">
+              <div class="cartridge-notch"></div>
               <div class="project-img-wrapper">
                 <span class="nb-tag nb-tag-red project-category-badge">AI & ML</span>
-                <img src="assets/anmol_projimage.png" alt="DreamLab" class="project-img" loading="lazy" />
+                <img src="assets/anmol_projimage.webp" alt="DreamLab" class="project-img" loading="lazy" />
               </div>
               <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
                 <div class="project-tech-tags">
@@ -924,10 +1084,11 @@
             </div>
 
             <!-- 2. Electro-Lithography System -->
-            <div class="nb-card nb-card-accent-gold project-card" data-category="IoT & Hardware">
+            <div class="project-cartridge nb-card-accent-gold project-card" data-category="IoT & Hardware">
+              <div class="cartridge-notch"></div>
               <div class="project-img-wrapper">
                 <span class="nb-tag nb-tag-gold project-category-badge">IoT & Hardware</span>
-                <img src="assets/ELS_image.png" alt="Electro-Lithography System" class="project-img" loading="lazy" />
+                <img src="assets/ELS_image.webp" alt="Electro-Lithography System" class="project-img" loading="lazy" />
               </div>
               <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
                 <div class="project-tech-tags">
@@ -955,10 +1116,11 @@
             </div>
 
             <!-- 3. Sim3D -->
-            <div class="nb-card nb-card-accent-aqua project-card" data-category="3D Rendering">
+            <div class="project-cartridge nb-card-accent-aqua project-card" data-category="3D Rendering">
+              <div class="cartridge-notch"></div>
               <div class="project-img-wrapper">
                 <span class="nb-tag nb-tag-aqua project-category-badge">3D Rendering</span>
-                <img src="assets/sim3d.png" alt="Sim3D Physics Engine" class="project-img" loading="lazy" />
+                <img src="assets/sim3d.webp" alt="Sim3D Physics Engine" class="project-img" loading="lazy" />
               </div>
               <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
                 <div class="project-tech-tags">
@@ -986,10 +1148,11 @@
             </div>
 
             <!-- 4. PGNTA Humanoid Robot -->
-            <div class="nb-card nb-card-accent-green project-card" data-category="Robotics">
+            <div class="project-cartridge nb-card-accent-green project-card" data-category="Robotics">
+              <div class="cartridge-notch"></div>
               <div class="project-img-wrapper">
                 <span class="nb-tag nb-tag-green project-category-badge">Robotics</span>
-                <img src="assets/PGNTA_image.png" alt="PGNTA Humanoid Robot" class="project-img" loading="lazy" />
+                <img src="assets/PGNTA_image.webp" alt="PGNTA Humanoid Robot" class="project-img" loading="lazy" />
               </div>
               <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
                 <div class="project-tech-tags">
@@ -1014,10 +1177,11 @@
             </div>
 
             <!-- 5. DRL Stock Framework -->
-            <div class="nb-card nb-card-accent-red project-card" data-category="AI & ML">
+            <div class="project-cartridge nb-card-accent-red project-card" data-category="AI & ML">
+              <div class="cartridge-notch"></div>
               <div class="project-img-wrapper">
                 <span class="nb-tag nb-tag-red project-category-badge">AI & ML</span>
-                <img src="assets/DRL_stock_analyzer.png" alt="DRL Stock Analyzer" class="project-img" loading="lazy" />
+                <img src="assets/DRL_stock_analyzer.webp" alt="DRL Stock Analyzer" class="project-img" loading="lazy" />
               </div>
               <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
                 <div class="project-tech-tags">
@@ -1042,10 +1206,11 @@
             </div>
 
             <!-- 6. ForkCast Kitchen AI -->
-            <div class="nb-card nb-card-accent-gold project-card" data-category="Web Development">
+            <div class="project-cartridge nb-card-accent-gold project-card" data-category="Web Development">
+              <div class="cartridge-notch"></div>
               <div class="project-img-wrapper">
                 <span class="nb-tag nb-tag-gold project-category-badge">Web Development</span>
-                <img src="assets/Forkcast_image.png" alt="ForkCast Kitchen AI" class="project-img" loading="lazy" />
+                <img src="assets/Forkcast_image.webp" alt="ForkCast Kitchen AI" class="project-img" loading="lazy" />
               </div>
               <div class="nb-card-body" style="display: flex; flex-direction: column; flex: 1;">
                 <div class="project-tech-tags">
@@ -1078,10 +1243,21 @@
       </section>
 
       <!-- ====================================================================
-           5. GALLERY & MOMENTS SECTION (#gallery)
+           CHAPTER 04: SURVEILLANCE ARCHIVE & GALLERY (#gallery)
            ==================================================================== -->
       <section id="gallery" class="section">
         <div class="container">
+
+          <div class="terminal-window" style="margin-bottom: 2.5rem;">
+            <div class="terminal-titlebar">
+              <span>[■] PHOTO_ARCHIVE_VIEWER.EXE // CHAPTER_04</span>
+              <div class="terminal-controls">
+                <span>—</span>
+                <span>□</span>
+                <span>✕</span>
+              </div>
+            </div>
+          </div>
 
           <div class="section-header">
             <div class="section-tag">// 0x04_ARCHIVE</div>
@@ -1096,13 +1272,13 @@
             </h3>
             <div class="gallery-grid">
               <div class="gallery-item" data-caption="Foundation team gathering and milestone celebration">
-                <img src="assets/ogcrew.jpeg" alt="OG Team Crew" class="gallery-img" loading="lazy" />
+                <img src="assets/ogcrew.webp" alt="OG Team Crew" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Club crew working session at IISERB">
-                <img src="assets/ourcrew.jpeg" alt="Our Crew Gathering" class="gallery-img" loading="lazy" />
+                <img src="assets/ourcrew.webp" alt="Our Crew Gathering" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Team debrief after Latency flagship event">
-                <img src="assets/afterlatency.jpeg" alt="After Latency Celebration" class="gallery-img" loading="lazy" />
+                <img src="assets/afterlatency.webp" alt="After Latency Celebration" class="gallery-img" loading="lazy" />
               </div>
             </div>
           </div>
@@ -1114,16 +1290,16 @@
             </h3>
             <div class="gallery-grid">
               <div class="gallery-item" data-caption="Main stage & scoreboard for IISERB Got Latent">
-                <img src="assets/latent_Board.jpg" alt="Latent Stage & Scoreboard" class="gallery-img" loading="lazy" />
+                <img src="assets/latent_Board.webp" alt="Latent Stage & Scoreboard" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Live performance & host segment">
-                <img src="assets/Manyu_shaf.jpg" alt="Latent Live Segment" class="gallery-img" loading="lazy" />
+                <img src="assets/Manyu_shaf.webp" alt="Latent Live Segment" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Panel of judges evaluating pitches">
-                <img src="assets/Latency_judge.jpg" alt="Latency Judges Panel" class="gallery-img" loading="lazy" />
+                <img src="assets/Latency_judge.webp" alt="Latency Judges Panel" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Packed auditorium crowd engagement">
-                <img src="assets/Latency_aud.jpg" alt="Latency Audience" class="gallery-img" loading="lazy" />
+                <img src="assets/Latency_aud.webp" alt="Latency Audience" class="gallery-img" loading="lazy" />
               </div>
             </div>
           </div>
@@ -1135,13 +1311,13 @@
             </h3>
             <div class="gallery-grid">
               <div class="gallery-item" data-caption="Spark Tank pitching and project exhibition">
-                <img src="assets/og_goated.jpg" alt="Spark Tank Team Exhibition" class="gallery-img" loading="lazy" />
+                <img src="assets/og_goated.webp" alt="Spark Tank Team Exhibition" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Hardware prototype demo at Spark Tank">
-                <img src="assets/spark_tank.jpg" alt="Hardware Prototype Demo" class="gallery-img" loading="lazy" />
+                <img src="assets/spark_tank.webp" alt="Hardware Prototype Demo" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Interactive electronics showcase">
-                <img src="assets/saprky.jpg" alt="Spark Tank Interaction" class="gallery-img" loading="lazy" />
+                <img src="assets/saprky.webp" alt="Spark Tank Interaction" class="gallery-img" loading="lazy" />
               </div>
             </div>
           </div>
@@ -1153,13 +1329,13 @@
             </h3>
             <div class="gallery-grid">
               <div class="gallery-item" data-caption="Keynote address in the lecture theater">
-                <img src="assets/sukarnasiraud.jpg" alt="Professor Lecture Theater Talk" class="gallery-img" loading="lazy" />
+                <img src="assets/sukarnasiraud.webp" alt="Professor Lecture Theater Talk" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Technical talk on Volatile Memory architectures">
-                <img src="assets/volatile_mem.jpg" alt="Volatile Memory Session" class="gallery-img" loading="lazy" />
+                <img src="assets/volatile_mem.webp" alt="Volatile Memory Session" class="gallery-img" loading="lazy" />
               </div>
               <div class="gallery-item" data-caption="Guest lecture session with faculty mentors">
-                <img src="assets/shantanu_sir.jpg" alt="Faculty Guest Lecture" class="gallery-img" loading="lazy" />
+                <img src="assets/shantanu_sir.webp" alt="Faculty Guest Lecture" class="gallery-img" loading="lazy" />
               </div>
             </div>
           </div>
@@ -1192,10 +1368,21 @@
       </div>
 
       <!-- ====================================================================
-           6. RESOURCES HUB SECTION (#resources)
+           CHAPTER 05: KNOWLEDGE VAULT & RESOURCES (#resources)
            ==================================================================== -->
       <section id="resources" class="section">
         <div class="container">
+
+          <div class="terminal-window" style="margin-bottom: 2.5rem;">
+            <div class="terminal-titlebar">
+              <span>[■] KNOWLEDGE_VAULT.NOTION // CHAPTER_05</span>
+              <div class="terminal-controls">
+                <span>—</span>
+                <span>□</span>
+                <span>✕</span>
+              </div>
+            </div>
+          </div>
 
           <div class="section-header">
             <div class="section-tag">// 0x05_KNOWLEDGE_BASE</div>
@@ -1229,10 +1416,21 @@
       </section>
 
       <!-- ====================================================================
-           7. JOIN US SECTION (#join)
+           CHAPTER 06: TRANSMISSION PORTAL & JOIN (#join)
            ==================================================================== -->
       <section id="join" class="section">
         <div class="container">
+
+          <div class="terminal-window" style="margin-bottom: 2.5rem;">
+            <div class="terminal-titlebar">
+              <span>[■] TRANSMISSION_PORTAL.COMMS // CHAPTER_06</span>
+              <div class="terminal-controls">
+                <span>—</span>
+                <span>□</span>
+                <span>✕</span>
+              </div>
+            </div>
+          </div>
 
           <div class="section-header">
             <div class="section-tag">// 0x06_INVOLVEMENT</div>
@@ -1320,6 +1518,43 @@
 
           </div>
 
+          <!-- ==================================================================
+               INTERACTIVE RETRO LORE TERMINAL CONSOLE
+               ================================================================== -->
+          <div class="lore-terminal-wrapper">
+            <div class="terminal-titlebar">
+              <span>[■] EECS_INTERACTIVE_CONSOLE.SH // v2.04</span>
+              <span class="font-mono" style="font-size: 0.7rem; color: var(--dragon-green-bright);">LIVE_SESSION</span>
+            </div>
+            
+            <div class="lore-terminal-screen">
+              <div id="terminal-output">
+                <div class="lore-terminal-output" style="color: var(--dragon-green-bright);">
+[EECS KERNEL v2.04 INITIALIZED]
+Type "help" to list available commands, or click any suggestion chip below to explore club logs, roster, and easter eggs.
+                </div>
+              </div>
+            </div>
+
+            <!-- Suggestion Chips -->
+            <div class="lore-command-chips">
+              <span style="font-size: 0.7rem; color: var(--text-dim); align-self: center; margin-right: 0.25rem;">QUICK RUN:</span>
+              <button class="lore-chip" data-cmd="help">help</button>
+              <button class="lore-chip" data-cmd="lore">lore</button>
+              <button class="lore-chip" data-cmd="team">team</button>
+              <button class="lore-chip" data-cmd="projects">projects</button>
+              <button class="lore-chip" data-cmd="stats">stats</button>
+              <button class="lore-chip" data-cmd="contact">contact</button>
+              <button class="lore-chip" data-cmd="clear">clear</button>
+            </div>
+
+            <!-- Terminal Input -->
+            <div class="lore-terminal-prompt-line">
+              <span style="color: var(--dragon-gold); font-weight: 700;">guest@iiserb:~$</span>
+              <input type="text" id="terminal-input" class="lore-terminal-input" placeholder="Type a command (e.g. help, lore, team, projects)..." autocomplete="off" spellcheck="false" />
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -1334,7 +1569,7 @@
         <div class="footer-top">
           <div>
             <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-              <img src="assets/logo.png" alt="Logo" width="30" height="30" style="border: 1px solid var(--dragon-red);" />
+              <img src="assets/logo.webp" alt="Logo" width="30" height="30" style="border: 1px solid var(--dragon-red);" />
               <span class="retro-wordmark" style="font-size: 1rem;">EECS CLUB IISERB</span>
             </div>
             <p class="font-mono" style="font-size: 0.85rem; color: var(--text-muted);">

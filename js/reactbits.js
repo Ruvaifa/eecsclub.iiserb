@@ -1,6 +1,6 @@
 /**
- * VANILLA REACTBITS & RETRO CANVAS
- * Zero jarring hover transforms. Solid, clean, high-performance interactions.
+ * VANILLA REACTBITS, RETRO CANVAS & ASCII HARDWARE LAB ENGINE
+ * High-performance 60fps circuit canvas, text scramble, and interactive ASCII animation engine.
  */
 
 // ==========================================================================
@@ -143,7 +143,6 @@ export function initCircuitCanvas() {
       if (this.y < 0) this.y = height;
       if (this.y > height) this.y = 0;
 
-      // Mouse gentle interaction
       if (mouse.isHovering) {
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
@@ -216,4 +215,292 @@ export function initCircuitCanvas() {
 
 export function refreshCanvasTheme() {
   if (updateCanvasThemeColors) updateCanvasThemeColors();
+}
+
+// ==========================================================================
+// 3. INTERACTIVE ASCII HARDWARE & SYSTEMS ANIMATION ENGINE
+// ==========================================================================
+
+export const ASCII_SYSTEMS = {
+  uav: {
+    title: "AUTONOMOUS UAV & VTOL FLIGHT SYSTEM",
+    desc: "Autonomous aerial robotics leveraging PX4 / ArduPilot flight stacks, optical flow odometry, PID attitude stabilizing loops running at 400Hz, and real-time telemetry downlink.",
+    frames: [
+`      (===)                     (===)
+      \\   /                     \\   /
+       \\ /                       \\ /
+  +-----[X]---------------------[X]-----+
+  |      |                       |      |
+  |      +-------\\       /-------+      |
+  |               \\ [O] /               |
+  |             +---[#]---+             |
+  |             | IISERB  |             |
+  |             | UAV-SYS |             |
+  |             +---[#]---+             |
+  |               /     \\               |
+  |      +-------/       \\-------+      |
+  |      |                       |      |
+  +-----[X]---------------------[X]-----+
+       / \\                       / \\
+      /   \\                     /   \\
+      (===)                     (===)`,
+`      ( | )                     ( | )
+      \\   /                     \\   /
+       \\ /                       \\ /
+  +-----[X]---------------------[X]-----+
+  |      |                       |      |
+  |      +-------\\       /-------+      |
+  |               \\ [O] /               |
+  |             +---[#]---+             |
+  |             | IISERB  |             |
+  |             | UAV-SYS |             |
+  |             +---[#]---+             |
+  |               /     \\               |
+  |      +-------/       \\-------+      |
+  |      |                       |      |
+  +-----[X]---------------------[X]-----+
+       / \\                       / \\
+      /   \\                     /   \\
+      ( | )                     ( | )`,
+`      ( - )                     ( - )
+      \\   /                     \\   /
+       \\ /                       \\ /
+  +-----[X]---------------------[X]-----+
+  |      |                       |      |
+  |      +-------\\       /-------+      |
+  |               \\ [O] /               |
+  |             +---[#]---+             |
+  |             | IISERB  |             |
+  |             | UAV-SYS |             |
+  |             +---[#]---+             |
+  |               /     \\               |
+  |      +-------/       \\-------+      |
+  |      |                       |      |
+  +-----[X]---------------------[X]-----+
+       / \\                       / \\
+      /   \\                     /   \\
+      ( - )                     ( - )`,
+`      ( / )                     ( / )
+      \\   /                     \\   /
+       \\ /                       \\ /
+  +-----[X]---------------------[X]-----+
+  |      |                       |      |
+  |      +-------\\       /-------+      |
+  |               \\ [O] /               |
+  |             +---[#]---+             |
+  |             | IISERB  |             |
+  |             | UAV-SYS |             |
+  |             +---[#]---+             |
+  |               /     \\               |
+  |      +-------/       \\-------+      |
+  |      |                       |      |
+  +-----[X]---------------------[X]-----+
+       / \\                       / \\
+      /   \\                     /   \\
+      ( / )                     ( / )`
+    ],
+    registers: [
+      { label: "FLIGHT_MODE", val: "AUTO_NAV" },
+      { label: "ALTITUDE", val: "18.4 m" },
+      { label: "PID_UPDATE", val: "400 Hz" },
+      { label: "IMU_SENSOR", val: "MPU6050_6AXIS" },
+      { label: "GPS_LOCK", val: "14 SATS" },
+      { label: "BATTERY", val: "15.8V (4S)" }
+    ]
+  },
+
+  riscv: {
+    title: "RISC-V 32-BIT CUSTOM PROCESSOR CORE",
+    desc: "Bare-metal 5-stage pipelined RV32I processor architecture featuring hazard mitigation, memory-mapped I/O, UART peripheral drivers, and custom assembly toolchains.",
+    frames: [
+`+=======================================+
+| [CLK: 24.0MHz]   RISC-V RV32I CORE    |
++=======================================+
+|  [IF] -> [ID] -> [EX] -> [MEM] -> [WB]|
+|                                       |
+|  +--[ REGISTERS ]--+  +--[ ALU BUS ]--+
+|  | x0 (zero): 0x00 |  | ADD  x1,x2,x3 |
+|  | x1 (ra)  : 0x80 |  | AND  x4,x1,x5 |
+|  | x2 (sp)  : 0x7F |  | XOR  x6,x7,x8 |
+|  +-----------------+  +---------------+
+|                                       |
+|  +--[ MEMORY-MAPPED I/O INTERFACE ]--+
+|  |  0x40000000: [UART0_TX_READY]     |
+|  |  0x40000004: [SPI_BUS_MASTER]     |
+|  +-----------------------------------+
++=======================================+`,
+`+=======================================+
+| [CLK: 24.0MHz]   RISC-V RV32I CORE    |
++=======================================+
+|  [IF] >> [ID] >> [EX] >> [MEM] >> [WB]|
+|                                       |
+|  +--[ REGISTERS ]--+  +--[ ALU BUS ]--+
+|  | x0 (zero): 0x00 |  | SLL  x2,x1,2  |
+|  | x1 (ra)  : 0x84 |  | SUB  x5,x2,x1 |
+|  | x2 (sp)  : 0x7C |  | OR   x9,x3,x4 |
+|  +-----------------+  +---------------+
+|                                       |
+|  +--[ MEMORY-MAPPED I/O INTERFACE ]--+
+|  |  0x40000000: [UART0_TRANSMIT]     |
+|  |  0x40000008: [TIMER_INTERRUPT]    |
+|  +-----------------------------------+
++=======================================+`
+    ],
+    registers: [
+      { label: "ARCH", val: "RV32I_PIPELINE" },
+      { label: "PROGRAM_CTR", val: "0x004001F8" },
+      { label: "PIPELINE_ST", val: "EX_ACTIVE" },
+      { label: "INSTR_DEC", val: "ADDI x1, x0, 12" },
+      { label: "CACHE_HIT", val: "97.4%" },
+      { label: "LOGIC_UTIL", val: "1,420 LUTs" }
+    ]
+  },
+
+  robotics: {
+    title: "PGNTA 17-DOF HUMANOID ROBOTICS",
+    desc: "17 Degree of Freedom bipedal humanoid robot powered by ESP32, dual-core gait generation solvers, servo matrices, and custom joint kinematics designed from scratch.",
+    frames: [
+`             +---+
+             |O_O|  <-- HEAD [2 DOF]
+             +-|-+
+        +------|------+
+       /|   +-----+   |\\
+      / |   | ESP |   | \\  <-- ARMS [6 DOF]
+     [X]|   | 32  |   |[X]
+     |  |   +-----+   |  |
+     V  +------|------+  V
+              / \\
+             /   \\
+            /     \\
+           [=]   [=]       <-- HIPS [4 DOF]
+            |     |
+            |     |        <-- LEGS [4 DOF]
+           [=]   [=]
+           _|_   _|_       <-- FEET [1 DOF]`,
+`             +---+
+             |^_^|  <-- HEAD [2 DOF]
+             +-|-+
+        +------|------+
+       \\|   +-----+   |/
+        \\|   | ESP |   |/   <-- ARMS [6 DOF]
+        [X] | 32  |  [X]
+         |  +-----+   |
+         V     |      V
+              / \\
+            /     \\
+          [=]     [=]      <-- HIPS [4 DOF]
+           |       |
+          [=]     [=]      <-- LEGS [4 DOF]
+          _|_     _|_      <-- FEET [1 DOF]`
+    ],
+    registers: [
+      { label: "SERVO_COUNT", val: "17 ACTIVE" },
+      { label: "CONTROLLER", val: "ESP32_DUAL_CORE" },
+      { label: "KINEMATICS", val: "INVERSE_JACOB" },
+      { label: "BUS_RATE", val: "115200 BAUD" },
+      { label: "TORQUE_LIMIT", val: "2.4 Nm" },
+      { label: "BALANCE_IMU", val: "REALTIME_FEEDBACK" }
+    ]
+  },
+
+  litho: {
+    title: "MICRON ELECTRO-LITHOGRAPHY & PHYSICS",
+    desc: "Micron-level precision probe patterning system with real-time Z-axis electrical current feedback, paired with real-time C++ OpenGL cloth & mass-spring physics engines.",
+    frames: [
+`+--[ XYZ MICRO-PROBE STAGE ]-----------+
+|                                      |
+|    Z-AXIS PROBE:                     |
+|         ||                           |
+|         ||  <-- SMU CURRENT SENSOR   |
+|         \\/                           |
+|      -------- [SAMPLE SURFACE]       |
+|                                      |
+|    [X-POS: 142.3 µm] [Y-POS: 89.1 µm]|
+|    [Z-FEEDBACK: CONTACT DETECTED]    |
+|                                      |
++--[ MASS-SPRING PARTICLE MESH ]-------+
+|    o---o---o---o---o---o---o         |
+|    | X | X | X | X | X | X |  60 FPS |
+|    o---o---o---o---o---o---o  PHONG  |
++--------------------------------------+`,
+`+--[ XYZ MICRO-PROBE STAGE ]-----------+
+|                                      |
+|    Z-AXIS PROBE:                     |
+|         ||                           |
+|         ||  <-- SMU CURRENT SENSOR   |
+|         \\/                           |
+|      ---**--- [PATTERNING ACTIVE]    |
+|                                      |
+|    [X-POS: 146.8 µm] [Y-POS: 94.2 µm]|
+|    [Z-FEEDBACK: 4.2 µA CURRENT]      |
+|                                      |
++--[ MASS-SPRING PARTICLE MESH ]-------+
+|    o~~~o~~~o~~~o~~~o~~~o~~~o         |
+|    | / | \\ | / | \\ | / | \\ |  60 FPS |
+|    o~~~o~~~o~~~o~~~o~~~o~~~o  PHONG  |
++--------------------------------------+`
+    ],
+    registers: [
+      { label: "STAGE_PRECISION", val: "0.1 µm (XYZ)" },
+      { label: "SMU_SENSITIVITY", val: "10 pA" },
+      { label: "PHYSICS_ENGINE", val: "C++ / OPENGL" },
+      { label: "SPRING_COUNT", val: "2,048 NODES" },
+      { label: "SHADER_MODEL", val: "PHONG_BATCH" },
+      { label: "COLLISION", val: "SPATIAL_GRID" }
+    ]
+  }
+};
+
+export function initAsciiHardwareLab() {
+  const displayEl = document.getElementById('ascii-art-display');
+  const titleEl = document.getElementById('ascii-model-title');
+  const descEl = document.getElementById('ascii-model-desc');
+  const registersEl = document.getElementById('ascii-registers-list');
+  const tabs = document.querySelectorAll('.ascii-tab-btn');
+
+  if (!displayEl || !titleEl || !descEl || !registersEl) return;
+
+  let currentKey = 'uav';
+  let frameIdx = 0;
+  let animTimer = null;
+
+  function renderSystem(key) {
+    currentKey = key;
+    const sys = ASCII_SYSTEMS[key];
+    if (!sys) return;
+
+    titleEl.innerText = sys.title;
+    descEl.innerText = sys.desc;
+
+    // Render registers
+    registersEl.innerHTML = sys.registers.map(r => `
+      <div class="ascii-reg-item">
+        <span>${r.label}:</span>
+        <span class="val">${r.val}</span>
+      </div>
+    `).join('');
+
+    frameIdx = 0;
+    displayEl.textContent = sys.frames[0];
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const sysKey = tab.getAttribute('data-ascii-sys');
+      renderSystem(sysKey);
+    });
+  });
+
+  renderSystem('uav');
+
+  // 4-frame animation loop
+  setInterval(() => {
+    const sys = ASCII_SYSTEMS[currentKey];
+    if (sys && sys.frames.length > 0) {
+      frameIdx = (frameIdx + 1) % sys.frames.length;
+      displayEl.textContent = sys.frames[frameIdx];
+    }
+  }, 350);
 }
