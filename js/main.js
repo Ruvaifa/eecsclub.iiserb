@@ -131,9 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxClose = document.getElementById('lightbox-close');
 
   if (lightbox && lightboxImg) {
-    document.querySelectorAll('.gallery-item').forEach((item) => {
+    document.querySelectorAll('.gallery-item, .achievement-img-wrapper').forEach((item) => {
       item.addEventListener('click', () => {
         const img = item.querySelector('img');
+        if (!img) return;
         const caption = item.getAttribute('data-caption') || img.getAttribute('alt');
         
         lightboxImg.src = img.src;
