@@ -16,9 +16,7 @@ export function initAnimations() {
     heroTl.from('.hero-tag-badge', { opacity: 0, y: -20, duration: 0.6 })
           .from('.hero-title', { opacity: 0, y: 30, duration: 0.8 }, '-=0.3')
           .from('.hero-tagline', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-          .from('.hero-cta-group', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
-          .from('.hero-event-card', { opacity: 0, scale: 0.96, duration: 0.8 }, '-=0.4')
-          .from('.telemetry-metric-card', { opacity: 0, y: 25, stagger: 0.1, duration: 0.6 }, '-=0.4');
+          .from('.hero-cta-group', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3');
 
     // 2. SVG Circuit Path Drawing on Scroll
     document.querySelectorAll('.pcb-circuit-line').forEach((line) => {
