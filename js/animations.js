@@ -109,9 +109,6 @@ export function initAnimations() {
 
   // 6. Scroll Elevator Tracker (Active Rail)
   initScrollElevator();
-
-  // 7. Oscilloscope Live Sine Generator
-  initOscilloscope();
 }
 
 function initHudTelemetry() {
@@ -170,26 +167,4 @@ function initScrollElevator() {
       }
     });
   }, { passive: true });
-}
-
-function initOscilloscope() {
-  const wavePath = document.getElementById('oscilloscope-wave');
-  if (!wavePath) return;
-
-  let phase = 0;
-  function drawWave() {
-    requestAnimationFrame(drawWave);
-    phase += 0.08;
-
-    let d = 'M 0 27 ';
-    const width = 300;
-    for (let x = 0; x <= width; x += 6) {
-      const y = 27 + Math.sin(x * 0.06 + phase) * 14 * Math.cos(phase * 0.3);
-      d += `L ${x} ${y.toFixed(1)} `;
-    }
-
-    wavePath.setAttribute('d', d);
-  }
-
-  drawWave();
 }
