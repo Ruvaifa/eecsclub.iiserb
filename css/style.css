@@ -30,17 +30,27 @@
 
 /* --- Section Formatting --- */
 .section {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
   position: relative;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+  }
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
 }
 
 .section-tag {
@@ -485,7 +495,7 @@
 .about-mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: stretch;
 }
 
@@ -547,21 +557,33 @@
 .faculty-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
 .coordinators-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
 
 .core-team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
+}
+
+.dossier-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dossier-card .nb-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .member-avatar-container {
@@ -637,7 +659,13 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.75rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-img-wrapper {
@@ -705,7 +733,7 @@
 
 /* --- Gallery Section --- */
 .gallery-album {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .gallery-album-header {
@@ -820,8 +848,20 @@
 .join-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.join-grid .nb-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.join-grid .nb-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .benefits-list {
@@ -1120,7 +1160,7 @@
 
 /* --- Hackathons Section --- */
 .hackathon-subpart {
-  margin-bottom: 4rem;
+  margin-bottom: 2.75rem;
 }
 
 .hackathon-subpart:last-child {
@@ -1263,14 +1303,21 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: stretch;
 }
 
-.contact-card-body {
-  padding: 1.75rem;
+.contact-grid .nb-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+
+.contact-card-body {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   gap: 1.25rem;
 }
 
