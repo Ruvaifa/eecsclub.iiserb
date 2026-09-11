@@ -1518,7 +1518,9 @@
 /* --- Contact & Socials Section --- */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr;
+  max-width: 680px;
+  margin: 0 auto;
   gap: 2rem;
   align-items: stretch;
 }
