@@ -506,36 +506,45 @@ export const projects = [
 
 export const galleryAlbums = [
   {
-    name: "OG Team",
+    year: "2025-26",
+    title: "2025 – 2026 Sessions, Orientation & Moments",
     images: [
-      { src: "assets/ogcrew.webp", caption: "Foundation team gathering and milestone celebration" },
-      { src: "assets/ourcrew.webp", caption: "Club crew working session at IISERB" },
-      { src: "assets/afterlatency.webp", caption: "Team debrief after Latency flagship event" }
+      { src: "assets/gallery/2025-26/gallery_25_01.webp", caption: "Club Orientation & Welcome Session" },
+      { src: "assets/gallery/2025-26/gallery_25_02.webp", caption: "Robotics & Hardware Demonstrations" },
+      { src: "assets/gallery/2025-26/gallery_25_03.webp", caption: "Hands-on Technical Session at IISERB" },
+      { src: "assets/gallery/2025-26/gallery_25_04.webp", caption: "Lecture Hall Presentation & Briefing" },
+      { src: "assets/gallery/2025-26/gallery_25_05.webp", caption: "Interactive Q&A and Project Showcase" },
+      { src: "assets/gallery/2025-26/gallery_25_06.webp", caption: "Electronics Prototyping Demo" },
+      { src: "assets/gallery/2025-26/gallery_25_07.webp", caption: "Hands-on Hardware Tinkering" },
+      { src: "assets/gallery/2025-26/gallery_25_08.webp", caption: "Circuit Assembly & Breadboarding" },
+      { src: "assets/gallery/2025-26/gallery_25_09.webp", caption: "Student Team Collaboration in Lab" },
+      { src: "assets/gallery/2025-26/gallery_25_10.webp", caption: "Technical Briefing & Discussion" },
+      { src: "assets/gallery/2025-26/gallery_25_11.webp", caption: "Auditorium Crowd During Club Activities" },
+      { src: "assets/gallery/2025-26/gallery_25_12.webp", caption: "Stage Presentation & Live Audience" },
+      { src: "assets/gallery/2025-26/gallery_25_13.webp", caption: "Interactive Technical Demo" },
+      { src: "assets/gallery/2025-26/gallery_25_14.webp", caption: "Keynote Presentation & Mentoring" },
+      { src: "assets/gallery/2025-26/gallery_25_15.webp", caption: "Project Review & Student Discussions" },
+      { src: "assets/gallery/2025-26/gallery_25_16.webp", caption: "Hardware Showcase Interaction" },
+      { src: "assets/gallery/2025-26/gallery_25_17.webp", caption: "Club Orientation Audience Engagement" },
+      { src: "assets/gallery/2025-26/gallery_25_18.webp", caption: "2025–26 Club Gathering & Team Celebration" }
     ]
   },
   {
-    name: "IISERB GOT LATENT",
+    year: "2024-25",
+    title: "2024 – 2025 Foundation, Hackathons & Got Latent",
     images: [
-      { src: "assets/latent_Board.webp", caption: "Main stage & scoreboard for IISERB Got Latent" },
-      { src: "assets/Manyu_shaf.webp", caption: "Live performance & host segment" },
-      { src: "assets/Latency_judge.webp", caption: "Panel of judges evaluating pitches" },
-      { src: "assets/Latency_aud.webp", caption: "Auditorium crowd engagement" }
-    ]
-  },
-  {
-    name: "Spark Tank",
-    images: [
-      { src: "assets/og_goated.webp", caption: "Spark Tank pitching and project exhibition" },
-      { src: "assets/spark_tank.webp", caption: "Hardware prototype demo at Spark Tank" },
-      { src: "assets/saprky.webp", caption: "Interactive electronics showcase" }
-    ]
-  },
-  {
-    name: "Talks by Professors",
-    images: [
-      { src: "assets/sukarnasiraud.webp", caption: "Keynote address in the lecture theater" },
-      { src: "assets/volatile_mem.webp", caption: "Technical talk on Volatile Memory architectures" },
-      { src: "assets/shantanu_sir.webp", caption: "Guest lecture session with faculty mentors" }
+      { src: "assets/gallery/2024-25/gallery_24_01.webp", caption: "Workshop & Hands-On Engineering Showcase" },
+      { src: "assets/gallery/2024-25/gallery_24_02.webp", caption: "Interactive Audience Q&A Session" },
+      { src: "assets/gallery/2024-25/gallery_24_03.webp", caption: "Packed Auditorium Crowd Engagement" },
+      { src: "assets/gallery/2024-25/gallery_24_04.webp", caption: "Latency Flagship Judges Evaluation Panel" },
+      { src: "assets/gallery/2024-25/gallery_24_05.webp", caption: "Live Performance & Pitching Segment" },
+      { src: "assets/gallery/2024-25/gallery_24_06.webp", caption: "Team Debrief After Latency Flagship Event" },
+      { src: "assets/gallery/2024-25/gallery_24_07.webp", caption: "Main Stage Scoreboard for IISERB Got Latent" },
+      { src: "assets/gallery/2024-25/gallery_24_08.webp", caption: "Spark Tank Pitching & Project Exhibition" },
+      { src: "assets/gallery/2024-25/gallery_24_09.webp", caption: "Foundation Team Gathering & Milestone Celebration" },
+      { src: "assets/gallery/2024-25/gallery_24_10.webp", caption: "Interactive Electronics Showcase" },
+      { src: "assets/gallery/2024-25/gallery_24_11.webp", caption: "Guest Lecture Session with Faculty Mentors" },
+      { src: "assets/gallery/2024-25/gallery_24_12.webp", caption: "Keynote Address in the Lecture Theater" }
     ]
   }
 ];
