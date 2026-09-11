@@ -1229,6 +1229,25 @@
   gap: 1.75rem;
 }
 
+.sih-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.eyantra-teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .sih-teams-grid,
+  .eyantra-teams-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .active-team-card {
   display: flex;
   flex-direction: column;
