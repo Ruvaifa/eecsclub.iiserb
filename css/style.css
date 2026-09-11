@@ -537,13 +537,22 @@
 
 .about-image-card .about-image-wrapper {
   position: relative;
-  flex-grow: 1;
+  flex: 1 1 0;
   min-height: 320px;
-  height: 100%;
   border: none;
   box-shadow: none;
   overflow: hidden;
   background-color: var(--bg-surface);
+}
+
+.about-image-card .about-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .about-image-wrapper {
@@ -669,6 +678,7 @@
   margin-top: auto;
   padding-top: 0.75rem;
   border-top: 1px solid var(--border-color);
+  min-height: 48px;
 }
 
 /* --- Projects Section --- */
@@ -1656,10 +1666,13 @@
 
 .member-project-links {
   margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 0.35rem;
+  min-height: 28px;
 }
 
 .member-project-badge {
