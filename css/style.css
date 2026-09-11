@@ -1229,23 +1229,134 @@
   gap: 1.75rem;
 }
 
-.sih-teams-grid {
+/* --- Minimal List Styles (Achievements & Hackathons) --- */
+.minimal-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 0.75rem;
+}
+
+.minimal-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-surface);
+  border: 2px solid var(--border-color);
+  box-shadow: 2px 2px 0px var(--border-dark);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.minimal-list-item:hover {
+  border-color: var(--dragon-gold);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--dragon-gold);
+}
+
+.minimal-list-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.minimal-list-icon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.minimal-list-text {
+  font-family: var(--font-pixel);
+  font-size: 0.86rem;
+  color: var(--text-old-white);
+  line-height: 1.35;
+}
+
+.current-hackathons-minimal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-.eyantra-teams-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
-@media (max-width: 640px) {
-  .sih-teams-grid,
-  .eyantra-teams-grid {
+@media (max-width: 768px) {
+  .current-hackathons-minimal-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.minimal-track-card {
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.minimal-track-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 2px solid var(--border-color);
+  border-left: 3px solid var(--dragon-gold);
+  padding-left: 0.65rem;
+}
+
+.minimal-squad-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.minimal-squad-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--bg-deep-ink);
+  border: 1px solid var(--border-color);
+  transition: border-color var(--transition-fast);
+}
+
+.minimal-squad-item:hover {
+  border-color: var(--dragon-gold);
+}
+
+.squad-idx {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.squad-name {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-white);
+  line-height: 1.4;
+}
+
+.nb-btn-green {
+  background-color: #25d366;
+  color: #0b0f19;
+  border-color: #128c7e;
+  box-shadow: 2px 2px 0px var(--border-dark);
+}
+
+.nb-btn-green:hover {
+  background-color: #1ebe5d;
+  color: #0b0f19;
+  box-shadow: 3px 3px 0px var(--border-dark);
+}
+
+.nb-btn-green:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px var(--border-dark);
 }
 
 .active-team-card {
