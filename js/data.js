@@ -55,115 +55,142 @@ export const facultyAdvisors = [
 
 export const coordinators = [
   {
-    name: "Vishvajeet Singh",
-    role: "Founder EECS Club",
-    clearance: "LEVEL_0 // FOUNDER",
-    department: "Electrical Engineering and Computer Science",
-    year: "Graduate",
-    image: "assets/vishu_bhaiya.webp",
-    bio: "Engineering begins where theory meets action. We had plenty of theory but nowhere to actually build, break, and create. EECS Club is that space-- where we get hands-on, share ideas, and turn them into something real.",
-    linkedin: "https://www.linkedin.com/in/vishvajeet-singh-766866218/",
-    github: null,
-    email: null
+    name: "Ayush Sarkar",
+    role: "Coordinator",
+    clearance: "LEVEL_1 // COORDINATOR",
+    department: "Data Science and Engineering",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Trying to keep ahead of the merge conflicts?",
+    github: "https://github.com/AyushS05",
+    linkedin: "https://www.linkedin.com/in/ayush-sarkar-04b7b5371?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "ayushs25@iiserb.ac.in"
   },
   {
-    name: "Pranay Meshram",
+    name: "Sourish Bhat",
     role: "Coordinator",
-    clearance: "LEVEL_1 // LEAD",
-    department: "Data Science and Engineering",
+    clearance: "LEVEL_1 // COORDINATOR",
+    department: "Electrical Engineering and Computer Science",
     year: "3rd Year",
-    image: "assets/Pranay_image.webp",
-    bio: "Lead of the EECS Club. Loves organizing and mentoring. git pushin’ my love for tech.",
-    github: "https://github.com/praymesh/",
-    linkedin: "https://www.linkedin.com/in/pranay-meshramiiserb/",
-    email: "pranay23@iiserb.ac.in"
-  },
+    image: "assets/avatar_placeholder.svg",
+    bio: "Coordinator at EECS Club, steering technical operations, workshops, and engineering initiatives.",
+    github: null,
+    linkedin: null,
+    email: null
+  }
+];
+
+export const studentAdvisors = [
   {
     name: "Mohammad Ruvaifa",
-    role: "Coordinator",
-    clearance: "LEVEL_1 // LEAD",
+    role: "Student Advisor",
+    clearance: "LEVEL_1 // ADVISOR",
     department: "Engineering Science",
     year: "2nd Year",
     image: "assets/Ruvaifa.webp",
-    bio: "Compiler crashes, me too. Just a techie guy trying to make things work, emotionally if not electrically. I like building projects which has practical uses and can create an impact. Also I love F1 (fastest car wins).",
+    bio: "Compiler crashes, me too. Just a techie guy trying to make things work, emotionally if not electrically. I like building practical projects and I love F1.",
     github: "https://github.com/Ruvaifa",
     linkedin: "https://www.linkedin.com/in/ruvaifa-mohammad-a5648a300/",
     email: "mohammad24@iiserb.ac.in"
+  },
+  {
+    name: "Pranay Meshram",
+    role: "Student Advisor",
+    clearance: "LEVEL_1 // ADVISOR",
+    department: "Data Science and Engineering",
+    year: "3rd Year",
+    image: "assets/Pranay_image.webp",
+    bio: "Former Lead of the EECS Club. Loves organizing and mentoring. git pushin’ my love for tech.",
+    github: "https://github.com/praymesh/",
+    linkedin: "https://www.linkedin.com/in/pranay-meshramiiserb/",
+    email: "pranay23@iiserb.ac.in"
   }
 ];
 
 export const coreTeam = [
   {
-    name: "Agolika",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Electronics and Communication Engineering",
-    year: "3rd Year",
-    image: "assets/Agolika_image.webp",
-    bio: "ECE by degree, chaos and foodie. I like building stuff, fixing things, and occasionally pretending I know nothing about what’s going on.",
-    email: "agolika23@iiserb.ac.in",
+    name: "Koustav Patra",
+    role: "Soc-Med Head",
+    clearance: "LEVEL_2 // HEAD",
+    department: "Electrical Engineering and Computer Science",
+    year: "Core Member",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Leading social media, outreach, and digital presence for EECS Club.",
     github: null,
-    linkedin: null
+    linkedin: null,
+    email: null
   },
   {
-    name: "Divyam Sood",
+    name: "Madhu",
+    role: "Design Lead",
+    clearance: "LEVEL_2 // LEAD",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "all here for the thrill of it, cause at the end of the day it’s all small and big potatoes",
+    github: "https://github.com/KHUSHIk4",
+    linkedin: "https://www.linkedin.com/in/madhusmita-kisku-a63b9324a",
+    email: "madhusmita25@iiserb.ac.in"
+  },
+  {
+    name: "Anurag Gupta",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "still debugging my life",
+    github: "https://github.com/anuragGupta08",
+    linkedin: "https://www.linkedin.com/in/anurag-gupta-b97208382?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    email: "ganurag25@iiserb.ac.in"
+  },
+  {
+    name: "Arin Pal",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Hi!",
+    github: "https://github.com/ArinPal",
+    linkedin: "https://www.linkedin.com/in/arin-pal-8a2a53201?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "arin25@iiserb.ac.in"
+  },
+  {
+    name: "Aryan Sanjot Singh",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/aryan_sanjot.webp",
+    bio: "Just here to code, create some chaos, and pretend I know what I’m doing. 😭",
+    github: "https://github.com/iaryan4",
+    linkedin: "https://www.linkedin.com/in/aryan-sanjot-81826032a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "aryans24@iiserb.ac.in"
+  },
+  {
+    name: "Astha Mishra",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "I’m generally a pretty curious person and I love learning new things!!!",
+    github: "https://github.com/marchastha27-cell",
+    linkedin: "https://www.linkedin.com/in/astha-mishra-006a023b0/",
+    email: "astham25@iiserb.ac.in"
+  },
+  {
+    name: "Dhruv Jagdale",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
     department: "Electrical Engineering and Computer Science",
-    year: "3rd Year",
-    image: "assets/Divyam_image.webp",
-    bio: "A third year EECS major. Likes tinkering with stuff, making grand plans, reading, and watching anime in his free time. Also believes all time is free if you ignore responsibilities well enough.",
-    linkedin: "https://www.linkedin.com/in/divyam-sood/",
-    email: "divyam23@iiserb.ac.in",
-    github: null
-  },
-  {
-    name: "Anmol Agarwal",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Electrical Engineering and Computer Science",
-    year: "3rd Year",
-    image: "assets/Anmol_image.webp",
-    bio: "neural nets make my brain go brr.",
-    github: "https://github.com/anm-ol",
-    linkedin: "https://www.linkedin.com/in/anmol-agrawal-2a4892250/",
-    email: "anmol23@iiserb.ac.in"
-  },
-  {
-    name: "Prashant Gupta",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Electrical Engineering and Computer Science",
-    year: "3rd Year",
-    image: "assets/prashant_image.webp",
-    bio: "I make robots move so I don’t have to.",
-    github: "https://github.com/rebelpg",
-    linkedin: "https://www.linkedin.com/in/prashant7579",
-    email: "prashant23@iiserb.ac.in"
-  },
-  {
-    name: "Shubham Mohanty",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Electrical Engineering and Computer Science",
-    year: "3rd Year",
-    image: "assets/shubammonty_image.webp",
-    bio: "Jack of some trades, master of none.",
-    github: "https://github.com/shubhammohanty",
-    linkedin: "https://www.linkedin.com/in/shubhammohanty",
-    email: "shubhamm23@iiserb.ac.in"
-  },
-  {
-    name: "Ramandeep",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Electrical Engineering and Computer Science",
-    year: "3rd Year",
-    image: "assets/ramandeep.webp",
-    bio: "Ever amazed with how electronics control our world, I want to know how things work down to the last detail. Passions include photography, game dev, 3D modelling and just making things in general.",
-    github: "https://github.com/ramanola",
-    linkedin: "https://in.linkedin.com/in/ramandeep-singh-hora-911168280",
-    email: "rmdpsingh05@gmail.com"
+    year: "Core Member",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Core Committee Member at EECS Club.",
+    github: null,
+    linkedin: null,
+    email: null
   },
   {
     name: "Gourangi Verma",
@@ -172,58 +199,46 @@ export const coreTeam = [
     department: "Engineering Science",
     year: "2nd Year",
     image: "assets/gourangi_image.webp",
-    bio: "I like math and computer science, and solving problems which require a bit of both. Most of the time, you might find me staring at the screen, trying to make sense of what just happened. When I'm not struggling with a problem, I'm probably watching anime or playing videogames.",
+    bio: "I like math and computer science, and solving problems which require a bit of both. When not struggling with a problem, watching anime or playing videogames.",
     github: "https://github.com/gourangiverma",
     linkedin: "https://www.linkedin.com/in/gourangi-verma-b2629b311",
     email: "gourangi24@iiserb.ac.in"
   },
   {
-    name: "Dharani Thota",
+    name: "Lakshyajeet Bhati",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
-    department: "Engineering Science",
-    year: "2nd Year",
-    image: "assets/Dharani_image.webp",
-    bio: "I'm a tech enthusiast, space freak. Exploring the world is my jam. I never back down from a challenge. Avid anime watcher.",
-    github: "https://github.com/idharanithota",
-    linkedin: "https://www.linkedin.com/in/dharanithota/",
-    email: "thota24@iiserb.ac.in"
-  },
-  {
-    name: "Shubham",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Natural Sciences",
-    year: "2nd Year",
-    image: "assets/Shubham_image.webp",
-    bio: "I'm Shubham, a robotics enthusiast who loves building RC cars with Arduino—next up, a battle-ready robot car. When I'm not wiring circuits, I'm capturing moments through my smartphone.",
+    department: "Electrical Engineering and Computer Science",
+    year: "Core Member",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Core Committee Member at EECS Club.",
     github: null,
-    linkedin: "https://www.linkedin.com/in/shubham-b8b3422b5",
-    email: "shubh24@iiserb.ac.in"
+    linkedin: null,
+    email: null
   },
   {
-    name: "Aryan Sanjot",
+    name: "Mann Kuvadia",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
     department: "Engineering Science",
     year: "2nd Year",
-    image: "assets/aryan_sanjot.webp",
-    bio: "Hi! I'm Aryan, a curious mind in the domain of technology and physics. I love to mix tech and creativity and always up for learning.",
-    github: "https://github.com/iaryan4",
-    linkedin: "https://www.linkedin.com/in/aryan-sanjot-81826032a",
-    email: "aryans24@iiserb.ac.in"
+    image: "assets/avatar_placeholder.svg",
+    bio: "An adventurous seeker with an insatiable curiosity, perpetually exploring new intellectual frontiers and real-world horizons.",
+    github: "https://github.com/MannKuvadia",
+    linkedin: "https://www.linkedin.com/in/mannkuvadia?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "kuvadia25@iiserb.ac.in"
   },
   {
-    name: "Prajyot Nula",
+    name: "Nandini Madan",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
     department: "Engineering Science",
     year: "2nd Year",
-    image: "assets/Prajyot_image.webp",
-    bio: "Hey this is Prajyot Nula, a robotics enthusiast who also enjoys machine learning and computer vision.",
-    github: "https://github.com/thymeprn",
-    linkedin: "https://www.linkedin.com/in/prajyot-nula/",
-    email: "prajyot24@iiserb.ac.in"
+    image: "assets/avatar_placeholder.svg",
+    bio: "Intimidating till I start giggling at my own jokes:)",
+    github: "https://github.com/ncs50-commits",
+    linkedin: "https://www.linkedin.com/in/nandini-madan-892a63433?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "nandinim25@iiserb.ac.in"
   },
   {
     name: "Nikhil Vashisht",
@@ -232,58 +247,130 @@ export const coreTeam = [
     department: "Engineering Science",
     year: "2nd Year",
     image: "assets/Nikhil_image.webp",
-    bio: "Hey everyone! I'm fascinated by the big picture – from the fundamental laws of physics to the elegant logic of mathematics. My passion lies in connecting those worlds to the practical magic of computer science and AI.",
+    bio: "Fascinated by the big picture – from the fundamental laws of physics to the elegant logic of mathematics and AI.",
     github: "https://github.com/nikhilcodes777",
     linkedin: "https://www.linkedin.com/in/nikhil-vashisht-9b4415337",
     email: "nikhilv24@iiserb.ac.in"
   },
   {
-    name: "Yashmeet",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Engineering Science",
-    year: "2nd Year",
-    image: "assets/Yashmeet_image.webp",
-    bio: "I’m into tech that messes with audio—both the digital and hardware. I love how twisting electrical signals totally changes or shapes the sound, and how analog or digital systems create those wild, unique textures that hit different. and also, i like gaming too.",
-    github: null,
-    linkedin: null,
-    email: "yashmeet24@iiserb.ac.in"
-  },
-  {
-    name: "Shafwan Safi",
-    role: "Core Committee / Dev",
-    clearance: "LEVEL_2 // DEV",
-    department: "Engineering Science",
-    year: "2nd Year",
-    image: "assets/Shafwan_image.webp",
-    bio: "AI, web dev, and trading bots — basically, if it runs on code, I’ll break it and then fix it.",
-    github: "https://github.com/Shafwansafi06",
-    linkedin: "https://www.linkedin.com/in/shafwan-safi/",
-    email: "shafwan24@iiserb.ac.in"
-  },
-  {
-    name: "Vansh Mangal",
+    name: "Shubham",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
     department: "Natural Sciences",
     year: "2nd Year",
-    image: "assets/mangal.webp",
-    bio: "Curious about science, drawn to tech, thriving in the chaos of overthinking and bold experiments. Here to make the EECS Club stand out — but seriously, don’t text me.",
-    github: null,
-    linkedin: "https://www.linkedin.com/in/vanshmangal/",
-    email: "vanshm24@iiserb.ac.in"
+    image: "assets/Shubham_image.webp",
+    bio: "While everyone else is writing code, I’m making sure there’s actual hardware for it to run on.",
+    github: "https://github.com/shubh24321",
+    linkedin: "https://www.linkedin.com/in/shubham-b8b3422b5",
+    email: "shubh24@iiserb.ac.in"
   },
   {
-    name: "Ishaan Jena",
+    name: "Yash Upadhyay",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
-    department: "Engineering Sciences",
+    department: "Engineering Science",
     year: "2nd Year",
-    image: "assets/ishaan_image.webp",
-    bio: "A second year student, exploring the world of electronics, especially in the area of signals and waves. Likes working on circuits, building models, pretty much anything you can tinker with. Enthusiastic about the field of radio antennas and telescopes.",
+    image: "assets/avatar_placeholder.svg",
+    bio: "hi! this is yash! a professional yapper now also part of the EECS club core lmao. Give me a steering wheel and some chhole kulche and i'm genuinely the happiest person alive, also yes I doomscroll YouTube way more than I should. i code in python, mess around with hardware on the side, and i'm way too excited to actually do stuff with this club this year 🔧",
     github: null,
     linkedin: null,
-    email: "ishaanj24@iiserb.ac.in"
+    email: "yashu25@iiserb.ac.in"
+  },
+  {
+    name: "Anubhav Gupta",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Data Science and Engineering",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "I’m Anubhav Gupta a 2nd-year DSE major barely surviving this dual degree on pure delusion. Between ultra pro max homesickness and side-questing in Vaibhav Sir’s GeoAI lab, I’m mostly just counting down the days until I can go home. Hit me up if you need survival hacks or just want to vent",
+    github: "https://github.com/ganubhav8922",
+    linkedin: "https://www.linkedin.com/in/anubhavgupta13",
+    email: "anubhav25@iiserb.ac.in"
+  },
+  {
+    name: "Ayush Bhoi",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Electrical Engineering and Computer Science",
+    year: "Core Member",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Core Committee Member at EECS Club.",
+    github: null,
+    linkedin: null,
+    email: null
+  },
+  {
+    name: "Krish Majhi",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Natural Sciences (Physics)",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "The Physics boy playing with Arduino",
+    github: "https://github.com/quantumcoder-3000",
+    linkedin: "https://www.linkedin.com/in/krish-majhi-144a372b3?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "krishm25@iiserb.ac.in"
+  },
+  {
+    name: "Naman Gupta",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Most bakchod person of the club",
+    github: "https://github.com/ng5433788-tech",
+    linkedin: null,
+    email: "namang25@iiserb.ac.in"
+  },
+  {
+    name: "Omkaar Sandhibigraha",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Electronics and Communication Engineering",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "2nd year ECE major exploring the world of electronics, with an eye on aerospace. Interested in Control Systems, Embedded Systems and ML.",
+    github: "https://github.com/omkaar-sandhibigraha",
+    linkedin: "https://www.linkedin.com/in/omkaar-sandhibigraha-3b4179386",
+    email: "omkaar25@iiserb.ac.in"
+  },
+  {
+    name: "Manish Tiwari",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Electrical Engineering and Computer Science",
+    year: "Core Member",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Core Committee Member at EECS Club.",
+    github: null,
+    linkedin: null,
+    email: null
+  },
+  {
+    name: "Swasti Gawande",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Electrical Engineering and Computer Science",
+    year: "Core Member",
+    image: "assets/avatar_placeholder.svg",
+    bio: "Core Committee Member at EECS Club.",
+    github: null,
+    linkedin: null,
+    email: null
+  },
+  {
+    name: "Md Farhan",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Electronics and Communication Engineering",
+    year: "2nd Year",
+    image: "assets/avatar_placeholder.svg",
+    bio: "An electronics enthusiast dedicated to bringing static components to life... Named as Md Farhan",
+    github: "https://github.com/mdfarhan273",
+    linkedin: "https://www.linkedin.com/in/md-farhan-468527396?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    email: "farhan25@iiserb.ac.in"
   }
 ];
 
@@ -594,9 +681,9 @@ export const competingTeams = [
     hackathon: "Autonomous Robotics & Micro-Mobility Challenge",
     status: "Round 2 // Simulation & Kinematic Gait Testing",
     members: [
-      { name: "Prashant Gupta", role: "Robotics & Controls", anchor: "#team-prashant" },
+      { name: "Prashant Gupta", role: "Robotics & Controls", anchor: null },
       { name: "Shubham", role: "Sensors & Firmware", anchor: "#team-shubham" },
-      { name: "Prajyot Nula", role: "Computer Vision", anchor: "#team-prajyot" }
+      { name: "Prajyot Nula", role: "Computer Vision", anchor: null }
     ],
     repoLink: "https://rebelpg.github.io/project/"
   },
@@ -605,8 +692,8 @@ export const competingTeams = [
     hackathon: "Algorithmic Trading & AI FinTech Summit",
     status: "Deep RL Policy Optimization & Multi-Asset Backtesting",
     members: [
-      { name: "Shafwan Safi", role: "Lead AI & Quant Dev", anchor: "#team-shafwan" },
-      { name: "Anmol Agarwal", role: "Neural Architectures", anchor: "#team-anmol" },
+      { name: "Shafwan Safi", role: "Lead AI & Quant Dev", anchor: null },
+      { name: "Anmol Agarwal", role: "Neural Architectures", anchor: null },
       { name: "Gourangi Verma", role: "Mathematical Modeling", anchor: "#team-gourangi" }
     ],
     repoLink: "https://github.com/Shafwansafi06/DRL_Stock_Analyzer"
@@ -617,7 +704,7 @@ export const competingTeams = [
     status: "Hardware Testing // Z-Axis Current Feedback Calibration",
     members: [
       { name: "Mohammad Ruvaifa", role: "Lead Systems & Hardware", anchor: "#team-ruvaifa" },
-      { name: "Ramandeep", role: "Electronics & 3D Prototyping", anchor: "#team-ramandeep" },
+      { name: "Ramandeep", role: "Electronics & 3D Prototyping", anchor: null },
       { name: "Aryan Sanjot", role: "Sensors & Physics Integration", anchor: "#team-aryan" }
     ],
     repoLink: "https://github.com/Ruvaifa/electro-lithography-system"

@@ -561,9 +561,10 @@
   margin-bottom: 2.5rem;
 }
 
-.coordinators-grid {
+.coordinators-grid,
+.student-advisors-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-bottom: 2.5rem;
 }
@@ -1629,7 +1630,8 @@
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .coordinators-grid {
+  .coordinators-grid,
+  .student-advisors-grid {
     grid-template-columns: 1fr;
   }
   .faculty-grid {
