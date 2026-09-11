@@ -303,6 +303,34 @@ export const projects = [
     }
   },
   {
+    id: "bhumi-drishti",
+    title: "Bhumi-Drishti: 1U CubeSat Prototype",
+    description: "AI-powered 1U nanosatellite capturing high-res Earth imagery and monitoring environmental telemetry (temperature, pressure, magnetic field) via LoRa/UHF.",
+    category: "IoT & Hardware",
+    technologies: ["Embedded C++", "ESP32/STM32", "TinyML", "LoRa/UHF"],
+    image: "assets/satellite.png",
+    doneBy: "Shubham",
+    links: {
+      code: "https://github.com/shubh24321/Bhumi-Drishti",
+      documentation: null,
+      demo: null
+    }
+  },
+  {
+    id: "krish-car",
+    title: "Human-Following Robot Car",
+    description: "Autonomous Arduino-controlled car utilizing dual IR and ultrasonic sensors for obstacle avoidance and dynamic human following.",
+    category: "Robotics",
+    technologies: ["Arduino Uno", "IR Sensor", "Ultrasonic", "Embedded C++"],
+    image: "assets/krish_car.jpg",
+    doneBy: "Krish Majhi",
+    links: {
+      code: null,
+      documentation: null,
+      demo: null
+    }
+  },
+  {
     id: "smart-health-ai",
     title: "Smart Health AI",
     description: "AI healthcare application delivering context-aware insights via Retrieval-Augmented Generation, vector embeddings, and LLMs.",
@@ -331,20 +359,6 @@ export const projects = [
     }
   },
   {
-    id: "krish-car",
-    title: "Human-Following Robot Car",
-    description: "Autonomous Arduino-controlled car utilizing dual IR and ultrasonic sensors for obstacle avoidance and dynamic human following.",
-    category: "Robotics",
-    technologies: ["Arduino Uno", "IR Sensor", "Ultrasonic", "Embedded C++"],
-    image: "assets/krish_car.jpg",
-    doneBy: "Krish Majhi",
-    links: {
-      code: null,
-      documentation: null,
-      demo: null
-    }
-  },
-  {
     id: "aerotwin",
     title: "AeroTwin — Turbojet Digital Twin",
     description: "Simulated turbojet engine degradation across Mach numbers, temperatures, and altitudes, validated against NASA C-MAPSS data.",
@@ -354,20 +368,6 @@ export const projects = [
     doneBy: "Ayush Bhoi",
     links: {
       code: "https://github.com/ReYsT-13/AeroTwin",
-      documentation: null,
-      demo: null
-    }
-  },
-  {
-    id: "bhumi-drishti",
-    title: "Bhumi-Drishti: 1U CubeSat Prototype",
-    description: "AI-powered 1U nanosatellite capturing high-res Earth imagery and monitoring environmental telemetry (temperature, pressure, magnetic field) via LoRa/UHF.",
-    category: "IoT & Hardware",
-    technologies: ["Embedded C++", "ESP32/STM32", "TinyML", "LoRa/UHF"],
-    image: null,
-    doneBy: "Shubham",
-    links: {
-      code: "https://github.com/shubh24321/Bhumi-Drishti",
       documentation: null,
       demo: null
     }
