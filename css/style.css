@@ -499,6 +499,18 @@
   align-items: stretch;
 }
 
+.about-mission-grid .nb-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.about-mission-grid .nb-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .mission-activity-list {
   list-style: none;
   margin-top: 1.25rem;
@@ -521,6 +533,17 @@
   font-size: 0.8rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
+}
+
+.about-image-card .about-image-wrapper {
+  position: relative;
+  flex-grow: 1;
+  min-height: 320px;
+  height: 100%;
+  border: none;
+  box-shadow: none;
+  overflow: hidden;
+  background-color: var(--bg-surface);
 }
 
 .about-image-wrapper {
