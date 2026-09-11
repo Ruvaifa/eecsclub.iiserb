@@ -289,53 +289,11 @@ export const coreTeam = [
 
 export const projects = [
   {
-    id: "dreamlab",
-    title: "DreamLab - Latent Diffusion Transformer",
-    description: "A smaller-scale implementation of a text-to-video generation model, inspired by OpenAI's Sora. Designed and experimented with various autoencoder architectures, focusing on minimizing quality loss through a combination of perceptual and reconstruction losses. Implemented the denoising process using a Diffusion Transformer (DiT) architecture with spatio-temporal attention and text conditioning via CLIP embeddings.",
-    category: "AI & ML",
-    technologies: ["GenAI", "Python", "PyTorch", "Diffusion Transformer", "Autoencoders", "CLIP"],
-    image: "assets/anmol_projimage.webp",
-    doneBy: "Anmol Agarwal",
-    links: {
-      code: "https://github.com/anm-ol/DreamLab",
-      documentation: "https://anm-ol.github.io/projects.html",
-      demo: null
-    }
-  },
-  {
-    id: "els",
-    title: "Electro-Lithography System",
-    description: "A custom-built Electro-Lithography system that enables micron-level precision probe movement with real-time Z-axis feedback. The system is designed to facilitate patterning on surfaces at micro and eventually nano scales, by detecting probe and sample contact through electrical current feedback.",
-    category: "IoT & Hardware",
-    technologies: ["Python", "Holmarc Motor Controllers", "Source Measurement Unit (SMU)", "Micropositioners (XYZ stage)"],
-    image: "assets/ELS_image.webp",
-    doneBy: "Mohammad Ruvaifa",
-    links: {
-      code: "https://github.com/Ruvaifa/electro-lithography-system",
-      documentation: "https://github.com/Ruvaifa/electro-lithography-system/blob/main/README.md",
-      demo: null
-    }
-  },
-  {
-    id: "sim3d",
-    title: "Sim3D - Realtime Cloth Simulation & Physics Engine",
-    description: "A 3D physics simulation engine developed from scratch in C++ using OpenGL. Features a mass-spring system for textured cloth simulation, advanced lighting with Phong shading, and efficient batch rendering. Includes a particle system with uniform grid-based collision detection and an interactive scene editor built with ImGui.",
-    category: "3D Rendering",
-    technologies: ["C++", "OpenGL", "Simulation", "Mass-Spring System", "Phong Shading", "ImGui"],
-    image: "assets/sim3d.webp",
-    doneBy: "Anmol Agarwal",
-    links: {
-      code: "https://github.com/anm-ol/sim3d",
-      documentation: "https://anm-ol.github.io/sim3d.html",
-      demo: null
-    }
-  },
-  {
     id: "pgnta",
-    title: "PGNTA: 17 DOF Humanoid Arduino Robot",
-    description: "PGNTA is a 17 Degree of Freedom (DOF) humanoid robot powered by an ESP32 microcontroller. Built primarily from laser-cut wooden plywood, it combines servo motors, sensors, and custom-designed joints to create a functional bipedal structure.",
+    title: "16 DOF Humanoid Robot",
+    description: "16 Degree of Freedom bipedal humanoid robot powered by ESP32, multi-servo joint matrices, and custom kinematics.",
     category: "Robotics",
-    technologies: ["Robotics", "Controls", "ESP32", "Arduino", "Servo Motors"],
+    technologies: ["ESP32", "Servo Matrix", "Kinematics", "Controls"],
     image: "assets/PGNTA_image.webp",
     doneBy: "Prashant Gupta",
     links: {
@@ -345,31 +303,115 @@ export const projects = [
     }
   },
   {
-    id: "drl-stock",
-    title: "DRL Stock Backtesting Framework",
-    description: "An intelligent algorithmic trading and backtesting system that leverages deep reinforcement learning to formulate automated quantitative strategies and optimize multi-asset portfolios dynamically under market volatility.",
+    id: "smart-health-ai",
+    title: "Smart Health AI",
+    description: "AI healthcare application delivering context-aware insights via Retrieval-Augmented Generation, vector embeddings, and LLMs.",
     category: "AI & ML",
-    technologies: ["AI", "Deep Reinforcement Learning", "Python", "Streamlit"],
-    image: "assets/DRL_stock_analyzer.webp",
-    doneBy: "Shafwan Safi",
+    technologies: ["Python", "RAG", "LLMs", "Vector DB"],
+    image: null,
+    doneBy: "Anubhav Gupta",
     links: {
-      code: "https://github.com/Shafwansafi06/DRL_Stock_Analyzer",
+      code: "https://github.com/ganubhav8922/smart-health-ai",
       documentation: null,
       demo: null
     }
   },
   {
-    id: "forkcast",
-    title: "ForkCast - The Kitchen AI",
-    description: "Get personalized meal plans, smart grocery lists, and discover amazing recipes tailored to your taste, budget, and dietary needs with full contextual AI suggestions.",
+    id: "student-expense-tracker",
+    title: "Student Expense Tracker & Analyzer",
+    description: "Responsive web application to monitor, categorize, and analyze monthly student expenses with automated budgeting metrics.",
     category: "Web Development",
-    technologies: ["Web", "Node.js", "WebSockets", "AI", "React", "TypeScript", "Supabase"],
-    image: "assets/Forkcast_image.webp",
-    doneBy: "Shafwan Safi",
+    technologies: ["Python", "SQL", "HTML/CSS", "Netlify"],
+    image: null,
+    doneBy: "Anubhav Gupta",
     links: {
-      code: "https://github.com/Shafwansafi06/forkcast-kitchen-ai",
+      code: "https://github.com/ganubhav8922/student-expense-calculator",
       documentation: null,
-      demo: "https://forkcast-meals.com"
+      demo: "https://dancing-mochi-b98028.netlify.app/"
+    }
+  },
+  {
+    id: "krish-car",
+    title: "Human-Following Robot Car",
+    description: "Autonomous Arduino-controlled car utilizing dual IR and ultrasonic sensors for obstacle avoidance and dynamic human following.",
+    category: "Robotics",
+    technologies: ["Arduino Uno", "IR Sensor", "Ultrasonic", "Embedded C++"],
+    image: "assets/krish_car.jpg",
+    doneBy: "Krish Majhi",
+    links: {
+      code: null,
+      documentation: null,
+      demo: null
+    }
+  },
+  {
+    id: "aerotwin",
+    title: "AeroTwin — Turbojet Digital Twin",
+    description: "Simulated turbojet engine degradation across Mach numbers, temperatures, and altitudes, validated against NASA C-MAPSS data.",
+    category: "AI & ML",
+    technologies: ["Python", "Digital Twin", "NASA C-MAPSS", "Simulation"],
+    image: null,
+    doneBy: "Ayush Bhoi",
+    links: {
+      code: "https://github.com/ReYsT-13/AeroTwin",
+      documentation: null,
+      demo: null
+    }
+  },
+  {
+    id: "bhumi-drishti",
+    title: "Bhumi-Drishti: 1U CubeSat Prototype",
+    description: "AI-powered 1U nanosatellite capturing high-res Earth imagery and monitoring environmental telemetry (temperature, pressure, magnetic field) via LoRa/UHF.",
+    category: "IoT & Hardware",
+    technologies: ["Embedded C++", "ESP32/STM32", "TinyML", "LoRa/UHF"],
+    image: null,
+    doneBy: "Shubham",
+    links: {
+      code: "https://github.com/shubh24321/Bhumi-Drishti",
+      documentation: null,
+      demo: null
+    }
+  },
+  {
+    id: "campusflow",
+    title: "CampusFlow — Campus Intelligence",
+    description: "Full-stack campus intelligence platform integrating multi-source data for real-time entity resolution, anomaly detection, and predictive analytics.",
+    category: "Web Development",
+    technologies: ["FastAPI", "React", "PostgreSQL", "ML"],
+    image: null,
+    doneBy: "Mohammad Ruvaifa",
+    links: {
+      code: "https://github.com/Ruvaifa/campusflow",
+      documentation: null,
+      demo: null
+    }
+  },
+  {
+    id: "pitstopai",
+    title: "PitStopAI — Code Risk Radar",
+    description: "AI-powered pull request risk analyzer for Bitbucket and Jira that flags hidden vulnerabilities and suggests automated fixes via Rovo agents.",
+    category: "AI & ML",
+    technologies: ["JavaScript", "Rovo Agents", "Bitbucket", "Jira API"],
+    image: null,
+    doneBy: "Mohammad Ruvaifa",
+    links: {
+      code: "https://github.com/Ruvaifa/PitStopAI",
+      documentation: null,
+      demo: null
+    }
+  },
+  {
+    id: "turbofan-rul",
+    title: "Turbofan Engine RUL Estimation",
+    description: "Published research in Elsevier ARRAY journal evaluating data preprocessing impacts on deep neural architectures for engine Remaining Useful Life estimation.",
+    category: "AI & ML",
+    technologies: ["Elsevier ARRAY", "Deep Learning", "Turbofan RUL", "PyTorch"],
+    image: null,
+    doneBy: "Mohammad Ruvaifa",
+    links: {
+      code: "https://doi.org/10.1016/j.array.2026.100919",
+      documentation: null,
+      demo: null
     }
   }
 ];
