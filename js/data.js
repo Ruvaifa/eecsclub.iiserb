@@ -88,7 +88,8 @@ export const studentAdvisors = [
     department: "Engineering Science",
     year: "2nd Year",
     image: "assets/Ruvaifa.webp",
-    bio: "Compiler crashes, me too. Just a techie guy trying to make things work, emotionally if not electrically. I like building practical projects and I love F1.",
+    bio: "Made everything a “future me problem” until I became future me. Now I just have problems.",
+    website: "https://ruvaifa.site",
     github: "https://github.com/Ruvaifa",
     linkedin: "https://www.linkedin.com/in/ruvaifa-mohammad-a5648a300/",
     email: "mohammad24@iiserb.ac.in"
@@ -184,13 +185,13 @@ export const coreTeam = [
     name: "Dhruv Jagdale",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
-    department: "Electrical Engineering and Computer Science",
-    year: "Core Member",
+    department: "Biological Sciences",
+    year: "2nd Year",
     image: "assets/avatar_placeholder.svg",
-    bio: "Core Committee Member at EECS Club.",
+    bio: "Yeah, I'm a Bio guy... Yeah ik this is the EECS club... Something's are just done for the fun of it...",
     github: null,
-    linkedin: null,
-    email: null
+    linkedin: "https://www.linkedin.com/in/dhruv-r-jagdale",
+    email: "dhruvj25@iiserb.ac.in"
   },
   {
     name: "Gourangi Verma",
