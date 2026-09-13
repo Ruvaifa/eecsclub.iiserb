@@ -687,6 +687,54 @@ export const supportedHackathons = [
   }
 ];
 
+export const upcomingHackathons = [
+  {
+    title: "iQOO City Battles — On-Device AI Hackathon",
+    edition: "Hyderabad Leg & National Tour",
+    date: "26–27 Sep 2026",
+    applyBy: "Rolling City-wise",
+    domain: "On-Device AI & Hardware Co-Optimization",
+    prize: "Advancement to Bengaluru Grand Finale + AI Credits",
+    tag: "EDGE AI"
+  },
+  {
+    title: "Techfest 2026 — IIT Bombay",
+    edition: "30th Edition",
+    date: "16–18 Dec 2026",
+    applyBy: "~Nov 2026",
+    domain: "International Hackathons & Robowars / Robotics Tracks",
+    prize: "Track Prizes ₹50,00,000 Total Circuit / ₹50k–₹1.25L per track",
+    tag: "ROBOTICS & CODE"
+  },
+  {
+    title: "Kharagpur Data Science Hackathon (KDSH 2027)",
+    edition: "IIT Kharagpur",
+    date: "~Mid-Jan 2027",
+    applyBy: "~2nd Week of Jan 2027",
+    domain: "Data Science, ML & Predictive Analytics",
+    prize: "₹4,00,000 Prize Pool",
+    tag: "DATA SCIENCE"
+  },
+  {
+    title: "HACK IITK 2027 (Global Cybersecurity Hackathon)",
+    edition: "IIT Kanpur",
+    date: "Grand Finale ~Apr 2027",
+    applyBy: "~Jan 2027 (Opens Nov 2026)",
+    domain: "Global Hybrid Cybersecurity",
+    prize: "₹30,00,000+ Prize Pool (Cash + AWS Credits + Certs)",
+    tag: "CYBERSECURITY"
+  },
+  {
+    title: "Microsoft Imagine Cup 2027",
+    edition: "Global Championship",
+    date: "World Finals ~May 2027",
+    applyBy: "~5 Jan 2027 (Opens Oct–Nov 2026)",
+    domain: "Frontier Software, AI & Cloud",
+    prize: "USD 100,000 + Azure Credits + Satya Nadella Mentorship",
+    tag: "GLOBAL"
+  }
+];
+
 export const competingTeams = [
   {
     teamName: "Team EECS Autonomous",
