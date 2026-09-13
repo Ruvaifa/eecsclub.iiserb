@@ -1036,6 +1036,139 @@
   box-shadow: 2px 2px 0px var(--border-dark);
 }
 
+/* --- Hackathons Master Modal --- */
+.nb-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 18, 15, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 1050;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.nb-modal-overlay.open {
+  display: flex;
+}
+
+.nb-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  background-color: var(--bg-surface);
+  border: 3px solid var(--border-dark);
+  box-shadow: 6px 6px 0px var(--dragon-gold);
+  padding: 1.75rem 2rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.nb-modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  background-color: var(--dragon-red);
+  color: #ffffff;
+  border: 2px solid var(--border-dark);
+  font-family: var(--font-pixel);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--border-dark);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nb-modal-close-btn:hover {
+  background-color: var(--dragon-red-bright);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--border-dark);
+}
+
+.nb-modal-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-right: 2.5rem;
+}
+
+.hackathon-excel-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .hackathon-excel-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .nb-modal-container {
+    padding: 1.25rem 1.25rem;
+  }
+}
+
+.excel-download-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-deep-ink);
+}
+
+.excel-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.excel-card-header .nb-tag {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.excel-card-body {
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.excel-card-body h4 {
+  min-height: 2.8rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.excel-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  color: var(--text-dim);
+}
+
+.excel-highlights-list li::before {
+  content: "▸ ";
+  color: var(--dragon-gold);
+}
+
+.excel-card-action {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
 /* --- Resources Hub Section --- */
 .resources-frame-container {
   width: 100%;

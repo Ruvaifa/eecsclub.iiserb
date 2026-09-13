@@ -15,7 +15,7 @@ const THEME_LABELS = {
   'acid': { icon: '⚡', name: 'ACID BRUTAL' }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   // 1. Initialize Visual Effects, Canvas & Animations
   initCircuitCanvas();
   initTextScramble();
@@ -183,7 +183,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Back to Top Button
+  // 7. Hackathons Master Directory Modal
+  const hackModal = document.getElementById('hackathons-modal');
+  const openHackModalBtn = document.getElementById('open-hackathons-modal-btn');
+  const closeHackModalBtn = document.getElementById('close-hackathons-modal-btn');
+
+  if (hackModal && openHackModalBtn) {
+    const openModal = () => {
+      hackModal.classList.add('open');
+      hackModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      hackModal.classList.remove('open');
+      hackModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    openHackModalBtn.addEventListener('click', openModal);
+    if (closeHackModalBtn) closeHackModalBtn.addEventListener('click', closeModal);
+
+    hackModal.addEventListener('click', (e) => {
+      if (e.target === hackModal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hackModal.classList.contains('open')) {
+        closeModal();
+      }
+    });
+  }
+
+  // 8. Back to Top Button
   const backToTop = document.getElementById('back-to-top');
   if (backToTop) {
     backToTop.addEventListener('click', (e) => {
@@ -191,7 +223,13 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}
 
 function initTerminalConsole(applyThemeFn) {
   const terminalInput = document.getElementById('terminal-input');

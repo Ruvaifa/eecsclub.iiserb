@@ -765,6 +765,16 @@
                 </div>
               </div>
 
+              <!-- See More Hackathons Action Bar -->
+              <div class="hackathons-see-more-bar" style="margin-top: 2.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <button id="open-hackathons-modal-btn" class="nb-btn nb-btn-primary" style="font-size: 0.95rem; padding: 0.75rem 1.75rem;" aria-haspopup="dialog" aria-controls="hackathons-modal">
+                  [📂] SEE MORE HACKATHONS (FULL DIRECTORY) ↗
+                </button>
+                <span class="font-mono" style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.65rem;">
+                  [📊 Access full calendars &amp; 35+ national/global hackathons compiled in 2 Master Excel workbooks]
+                </span>
+              </div>
+
             </div>
           </div>
 
@@ -2371,6 +2381,97 @@ Type "help" to list available commands, or click any suggestion chip below to ex
       </div>
     </footer>
 
+  </div>
+
+  <!-- Hackathons Master Directory & Calendars Modal -->
+  <div id="hackathons-modal" class="nb-modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-hackathons-title">
+    <div class="nb-modal-container">
+      <button id="close-hackathons-modal-btn" class="nb-modal-close-btn" aria-label="Close Modal">✕</button>
+      
+      <div class="nb-modal-header">
+        <div class="section-tag" style="font-size: 0.75rem; margin-bottom: 0.4rem;">// ARCHIVE // 2026-2027_CIRCUITS</div>
+        <h3 id="modal-hackathons-title" class="retro-title" style="font-size: 1.25rem; margin-bottom: 0.35rem;">
+          Hackathons <span style="color: var(--dragon-gold);">Master Directory &amp; Calendars</span>
+        </h3>
+        <p class="font-mono" style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          Comprehensive national &amp; international hackathon datasets compiled by EECS Club from official sources.
+        </p>
+      </div>
+
+      <div class="nb-modal-body">
+        
+        <!-- Grid of 2 Excel Sheets -->
+        <div class="hackathon-excel-cards-grid">
+          
+          <!-- Sheet 1: Master Calendar -->
+          <div class="nb-card nb-card-accent-gold excel-download-card">
+            <div class="excel-card-header">
+              <span class="nb-tag nb-tag-gold">[📅] CALENDAR WORKBOOK</span>
+              <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim);">.XLSX • 10 Sheets</span>
+            </div>
+            <div class="excel-card-body">
+              <h4 class="font-pixel" style="font-size: 0.88rem; color: var(--text-old-white); margin-bottom: 0.6rem; line-height: 1.4;">
+                Hackathons Calendar (Sep 2026 – Sep 2027)
+              </h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                Categorized track-by-track timelines across <strong>SIH 2026</strong>, <strong>IIT Hackathons</strong>, <strong>NITs</strong>, <strong>IIITs</strong>, <strong>Corporate India</strong>, and <strong>Global Tech Giants</strong>.
+              </p>
+              <ul class="excel-highlights-list font-mono">
+                <li>Detailed qualification rounds &amp; grand finale dates</li>
+                <li>Comprehensive institute-wise categorized tabs</li>
+                <li>Preparation benchmarks and eligibility criteria</li>
+              </ul>
+              <div class="excel-card-action">
+                <a href="assets_new/Hackathons_Calendar_Sep2026_Sep2027.xlsx" download="Hackathons_Calendar_Sep2026_Sep2027.xlsx" class="nb-btn nb-btn-gold" style="width: 100%; justify-content: center;">
+                  [📥] Download Calendar Sheet (.xlsx)
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sheet 2: Master Directory -->
+          <div class="nb-card nb-card-accent-aqua excel-download-card">
+            <div class="excel-card-header">
+              <span class="nb-tag nb-tag-aqua">[📊] MASTER DIRECTORY</span>
+              <span class="font-mono" style="font-size: 0.72rem; color: var(--text-dim);">.XLSX • 35+ Competitions</span>
+            </div>
+            <div class="excel-card-body">
+              <h4 class="font-pixel" style="font-size: 0.88rem; color: var(--text-old-white); margin-bottom: 0.6rem; line-height: 1.4;">
+                Hackathons Master Directory (Sep 2026 – Sep 2027)
+              </h4>
+              <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem;">
+                Chronological master directory tracking 35+ premier national and global hackathons with official registration links, prize pools, and status notes.
+              </p>
+              <ul class="excel-highlights-list font-mono">
+                <li>Prize pools from ₹50,000 to ₹30,00,000+ &amp; USD 100K</li>
+                <li>Registration start/end windows and date status</li>
+                <li>Direct source citations and verified notes</li>
+              </ul>
+              <div class="excel-card-action">
+                <a href="assets_new/Hackathons_Sep2026_Sep2027.xlsx" download="Hackathons_Sep2026_Sep2027.xlsx" class="nb-btn nb-btn-primary" style="width: 100%; justify-content: center;">
+                  [📥] Download Master Sheet (.xlsx)
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quick Info Callout -->
+        <div class="nb-card nb-card-accent-red" style="margin-top: 1.25rem;">
+          <div style="padding: 0.9rem 1.15rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-white); display: flex; align-items: center; gap: 0.5rem;">
+              <span style="color: var(--dragon-gold); font-size: 1rem;">[💡]</span>
+              <span>Need hardware loans, team matching, or compute guidance for these hackathons?</span>
+            </div>
+            <a href="mailto:eecs.club.official@gmail.com?subject=Hackathon%20Support%20Request" class="nb-btn nb-btn-primary nb-btn-sm">
+              [✉] Request Club Support
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
   <!-- Lightbox Modal for Gallery and Achievements -->
