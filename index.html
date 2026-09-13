@@ -45,52 +45,6 @@
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
   <div class="crt-overlay" aria-hidden="true"></div>
 
-  <!-- Top HUD Telemetry Bar -->
-  <div class="hud-telemetry-bar">
-    <div class="hud-telemetry-left">
-      <span class="hud-stat-chip"><span class="led-indicator led-green"></span>NODE: <strong>IISERB_EECS</strong></span>
-      <span class="hud-stat-chip">LOC: <strong>23.2845° N, 77.2764° E</strong></span>
-      <span class="hud-stat-chip">BUS: <strong id="hud-freq">24.00 MHz</strong></span>
-    </div>
-    <div class="hud-telemetry-right">
-      <span class="hud-stat-chip">THEME: <strong id="hud-theme">KANAGAWA</strong></span>
-      <span class="hud-stat-chip">SYS: <strong>NOMINAL</strong></span>
-      <span class="hud-stat-chip">TIME: <strong id="hud-clock">00:00:00 UTC</strong></span>
-    </div>
-  </div>
-
-  <!-- Side Vertical Scroll Elevator Rail -->
-  <nav class="scroll-elevator-rail" aria-label="Chapter Elevator">
-    <a href="#home" class="elevator-node active" title="Chapter 00: Boot">
-      <span class="elevator-dot"></span>
-      <span class="elevator-label">00_BOOT</span>
-    </a>
-    <a href="#about" class="elevator-node" title="Chapter 01: Directive">
-      <span class="elevator-dot"></span>
-      <span class="elevator-label">01_DIRECTIVE</span>
-    </a>
-    <a href="#team" class="elevator-node" title="Chapter 02: Research Roster">
-      <span class="elevator-dot"></span>
-      <span class="elevator-label">02_ROSTER</span>
-    </a>
-    <a href="#projects" class="elevator-node" title="Chapter 03: Schematics">
-      <span class="elevator-dot"></span>
-      <span class="elevator-label">03_SCHEMATICS</span>
-    </a>
-    <a href="#gallery" class="elevator-node" title="Chapter 04: Archives">
-      <span class="elevator-dot"></span>
-      <span class="elevator-label">04_ARCHIVES</span>
-    </a>
-    <a href="#resources" class="elevator-node" title="Chapter 05: Vault">
-      <span class="elevator-dot"></span>
-      <span class="elevator-label">05_VAULT</span>
-    </a>
-    <a href="#join" class="elevator-node" title="Chapter 06: Transmit">
-      <span class="elevator-dot"></span>
-      <span class="elevator-label">06_TRANSMIT</span>
-    </a>
-  </nav>
-
   <!-- Site Content Wrapper -->
   <div class="site-wrapper">
 
@@ -346,138 +300,290 @@
       </section>
 
       <!-- ====================================================================
-           4. ACHIEVEMENTS SECTION (#achievements)
-           ==================================================================== -->
-      <section id="achievements" class="section">
-        <div class="container">
-
-          <div class="section-header">
-            <div class="section-tag">// 0x02_MEMBER_ACHIEVEMENTS</div>
-            <h2 class="retro-title">Member <span data-scramble style="color: var(--dragon-gold);">Achievements</span></h2>
-            <p class="retro-subtitle">Honoring competitive podiums, national finalists, zero-day security research, and frontier prototypes by club members.</p>
-          </div>
-
-          <!-- Minimal Achievements List -->
-          <div class="minimal-list">
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-gold);">[🏎️]</span>
-                <span class="minimal-list-text">Atlassian Williams Racing Hackathon — International Finalists</span>
-              </div>
-              <span class="nb-tag nb-tag-gold">Global Finalists</span>
-            </div>
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-green-bright);">[🤖]</span>
-                <span class="minimal-list-text">e-Yantra Robotics Competition (IIT Bombay) — 2 Teams Finalists</span>
-              </div>
-              <span class="nb-tag nb-tag-green">Robotics Finalists</span>
-            </div>
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-red-bright);">[⚡]</span>
-                <span class="minimal-list-text">Manthan Hackathon at MANIT — 2 Teams Finalists</span>
-              </div>
-              <span class="nb-tag nb-tag-red">Hackathon Finalists</span>
-            </div>
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-aqua);">[🏆]</span>
-                <span class="minimal-list-text">IIT Guwahati Ethos Hackathon — Podium Finish</span>
-              </div>
-              <span class="nb-tag nb-tag-aqua">Podium Winner</span>
-            </div>
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-red-bright);">[🛡️]</span>
-                <span class="minimal-list-text">C-DAC Bug Bounty — Found 7 Critical Vulnerabilities on Debian 13 BOSS OS</span>
-              </div>
-              <span class="nb-tag nb-tag-red">Zero-Day Bounty</span>
-            </div>
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-gold);">[🦾]</span>
-                <span class="minimal-list-text">Robofest Gujarat Participation</span>
-              </div>
-              <span class="nb-tag nb-tag-gold">Field Robotics</span>
-            </div>
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-aqua);">[🛰️]</span>
-                <span class="minimal-list-text">AI-Powered 1U CubeSat Satellite Prototype</span>
-              </div>
-              <span class="nb-tag nb-tag-aqua">Space &amp; AI</span>
-            </div>
-
-            <div class="minimal-list-item">
-              <div class="minimal-list-left">
-                <span class="minimal-list-icon" style="color: var(--dragon-green-bright);">[✨]</span>
-                <span class="minimal-list-text">...And Many More Milestones</span>
-              </div>
-              <span class="nb-tag nb-tag-dark">Active Collective</span>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ====================================================================
-           5. CURRENT HACKATHONS SECTION (#hackathons)
+           4. HACKATHONS & ACHIEVEMENTS SECTION (#hackathons)
+           Unified Competitions Hub: Active Squads, Hall of Fame & Curated Target Circuits
            ==================================================================== -->
       <section id="hackathons" class="section">
         <div class="container">
 
           <div class="section-header">
-            <div class="section-tag">// 0x03_ACTIVE_COMPETITIONS</div>
-            <h2 class="retro-title">Current <span data-scramble style="color: var(--dragon-gold);">Hackathons</span></h2>
-            <p class="retro-subtitle">Dedicated student squads actively building, debugging, and representing EECS Club in premier national arenas.</p>
+            <div class="section-tag">// 0x02_COMPETITIONS</div>
+            <h2 class="retro-title">Hackathons &amp; <span data-scramble style="color: var(--dragon-gold);">Achievements</span></h2>
+            <p class="retro-subtitle">Active national squads, global podium finishes, and curated target circuits for EECS builders at IISER Bhopal.</p>
           </div>
 
-          <!-- Minimal Current Hackathons Grid -->
-          <div class="current-hackathons-minimal-grid">
-
-            <!-- Track 1: SIH (4 Teams) -->
-            <div class="nb-card nb-card-accent-gold minimal-track-card" style="padding: 1.1rem 1.35rem;">
-              <div class="minimal-track-header" style="border-left-color: var(--dragon-gold); border-bottom: none; margin-bottom: 0; padding-bottom: 0; min-height: auto;">
-                <div style="display: flex; align-items: center; gap: 0.65rem;">
-                  <span style="color: var(--dragon-gold); font-size: 1.15rem;">[⚡]</span>
-                  <h3 class="font-pixel" style="font-size: 0.95rem; color: var(--text-old-white); margin: 0;">
-                    Smart India Hackathon (SIH 2026)
-                  </h3>
-                </div>
-                <span class="nb-tag nb-tag-gold">4 Teams Participating</span>
-              </div>
+          <!-- A. ACTIVE SQUADS (CURRENT HACKATHONS) -->
+          <div style="margin-bottom: 2.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+              <span class="led-indicator led-green"></span>
+              <h3 class="font-pixel" style="font-size: 1.05rem; color: var(--dragon-gold); margin: 0;">
+                Active Fielding Squads
+              </h3>
             </div>
 
-            <!-- Track 2: e-Yantra (2 Teams) -->
-            <div class="nb-card nb-card-accent-green minimal-track-card" style="padding: 1.1rem 1.35rem;">
-              <div class="minimal-track-header" style="border-left-color: var(--dragon-green-bright); border-bottom: none; margin-bottom: 0; padding-bottom: 0; min-height: auto;">
-                <div style="display: flex; align-items: center; gap: 0.65rem;">
-                  <span style="color: var(--dragon-green-bright); font-size: 1.15rem;">[🤖]</span>
-                  <h3 class="font-pixel" style="font-size: 0.95rem; color: var(--text-old-white); margin: 0;">
-                    e-Yantra Robotics (IIT Bombay)
-                  </h3>
+            <div class="current-hackathons-minimal-grid">
+              <!-- Track 1: SIH (4 Teams) -->
+              <div class="nb-card nb-card-accent-gold minimal-track-card" style="padding: 1.1rem 1.35rem;">
+                <div class="minimal-track-header" style="border-left-color: var(--dragon-gold); border-bottom: none; margin-bottom: 0; padding-bottom: 0; min-height: auto;">
+                  <div style="display: flex; align-items: center; gap: 0.65rem;">
+                    <span style="color: var(--dragon-gold); font-size: 1.15rem;">[⚡]</span>
+                    <h4 class="font-pixel" style="font-size: 0.95rem; color: var(--text-old-white); margin: 0;">
+                      Smart India Hackathon (SIH 2026)
+                    </h4>
+                  </div>
+                  <span class="nb-tag nb-tag-gold">4 Teams Participating</span>
                 </div>
-                <span class="nb-tag nb-tag-green">2 Teams Participating</span>
+              </div>
+
+              <!-- Track 2: e-Yantra (2 Teams) -->
+              <div class="nb-card nb-card-accent-green minimal-track-card" style="padding: 1.1rem 1.35rem;">
+                <div class="minimal-track-header" style="border-left-color: var(--dragon-green-bright); border-bottom: none; margin-bottom: 0; padding-bottom: 0; min-height: auto;">
+                  <div style="display: flex; align-items: center; gap: 0.65rem;">
+                    <span style="color: var(--dragon-green-bright); font-size: 1.15rem;">[🤖]</span>
+                    <h4 class="font-pixel" style="font-size: 0.95rem; color: var(--text-old-white); margin: 0;">
+                      e-Yantra Robotics (IIT Bombay)
+                    </h4>
+                  </div>
+                  <span class="nb-tag nb-tag-green">2 Teams Participating</span>
+                </div>
               </div>
             </div>
+          </div>
 
+          <!-- B. COMPETITIVE ACHIEVEMENTS & HALL OF FAME -->
+          <div style="margin-bottom: 3.25rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+              <span style="color: var(--dragon-gold); font-size: 1.1rem;">[🏆]</span>
+              <h3 class="font-pixel" style="font-size: 1.05rem; color: var(--text-old-white); margin: 0;">
+                Hall of Fame &amp; Key Honors
+              </h3>
+            </div>
+
+            <div class="minimal-list">
+              <div class="minimal-list-item">
+                <div class="minimal-list-left">
+                  <span class="minimal-list-icon" style="color: var(--dragon-gold);">[🏎️]</span>
+                  <span class="minimal-list-text">Atlassian Williams Racing Hackathon — International Finalists</span>
+                </div>
+                <span class="nb-tag nb-tag-gold">Global Finalists</span>
+              </div>
+
+              <div class="minimal-list-item">
+                <div class="minimal-list-left">
+                  <span class="minimal-list-icon" style="color: var(--dragon-green-bright);">[🤖]</span>
+                  <span class="minimal-list-text">e-Yantra Robotics Competition (IIT Bombay) — 2 Teams Finalists</span>
+                </div>
+                <span class="nb-tag nb-tag-green">Robotics Finalists</span>
+              </div>
+
+              <div class="minimal-list-item">
+                <div class="minimal-list-left">
+                  <span class="minimal-list-icon" style="color: var(--dragon-red-bright);">[⚡]</span>
+                  <span class="minimal-list-text">Manthan Hackathon at MANIT — 2 Teams Finalists</span>
+                </div>
+                <span class="nb-tag nb-tag-red">Hackathon Finalists</span>
+              </div>
+
+              <div class="minimal-list-item">
+                <div class="minimal-list-left">
+                  <span class="minimal-list-icon" style="color: var(--dragon-aqua);">[🏆]</span>
+                  <span class="minimal-list-text">IIT Guwahati Ethos Hackathon — Podium Finish</span>
+                </div>
+                <span class="nb-tag nb-tag-aqua">Podium Winner</span>
+              </div>
+
+              <div class="minimal-list-item">
+                <div class="minimal-list-left">
+                  <span class="minimal-list-icon" style="color: var(--dragon-red-bright);">[🛡️]</span>
+                  <span class="minimal-list-text">C-DAC Bug Bounty — Found 7 Critical Vulnerabilities on Debian 13 BOSS OS</span>
+                </div>
+                <span class="nb-tag nb-tag-red">Zero-Day Bounty</span>
+              </div>
+
+              <div class="minimal-list-item">
+                <div class="minimal-list-left">
+                  <span class="minimal-list-icon" style="color: var(--dragon-gold);">[🦾]</span>
+                  <span class="minimal-list-text">Robofest Gujarat Participation</span>
+                </div>
+                <span class="nb-tag nb-tag-gold">Field Robotics</span>
+              </div>
+
+              <div class="minimal-list-item">
+                <div class="minimal-list-left">
+                  <span class="minimal-list-icon" style="color: var(--dragon-aqua);">[🛰️]</span>
+                  <span class="minimal-list-text">AI-Powered 1U CubeSat Satellite Prototype</span>
+                </div>
+                <span class="nb-tag nb-tag-aqua">Space &amp; AI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- C. UPCOMING HACKATHONS & TARGET CIRCUITS -->
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="color: var(--dragon-aqua); font-size: 1.1rem;">[🎯]</span>
+                <h3 class="font-pixel" style="font-size: 1.05rem; color: var(--text-old-white); margin: 0;">
+                  Upcoming Target Hackathons
+                </h3>
+              </div>
+              <span class="font-mono" style="font-size: 0.76rem; color: var(--text-dim);">Recommended for Club Squads</span>
+            </div>
+
+            <div class="events-minimal-list">
+              <!-- Hackathon 1: iQOO City Battles -->
+              <div class="nb-card event-list-item event-accent-red">
+                <div class="event-list-left">
+                  <div class="event-date-badge">
+                    <span class="event-date-day">26-27</span>
+                    <span class="event-date-month">SEP</span>
+                  </div>
+                  <div class="event-list-details">
+                    <div class="event-list-title-row">
+                      <h4 class="event-list-title">iQOO City Battles — On-Device AI</h4>
+                      <span class="nb-tag nb-tag-red" style="font-size: 0.68rem;">ON-DEVICE AI</span>
+                    </div>
+                    <div class="event-list-meta">
+                      <span>[📅] 26–27 Sep 2026</span>
+                      <span class="meta-dot">·</span>
+                      <span>[⚡] Edge AI &amp; Hardware-Software Co-Optimization</span>
+                      <span class="meta-dot">·</span>
+                      <span>[🏆] Bengaluru Grand Finale</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-list-right">
+                  <span class="nb-tag nb-tag-dark">Rolling / Multi-City</span>
+                </div>
+              </div>
+
+              <!-- Hackathon 2: Techfest 2026 — IIT Bombay -->
+              <div class="nb-card event-list-item event-accent-gold">
+                <div class="event-list-left">
+                  <div class="event-date-badge">
+                    <span class="event-date-day">16-18</span>
+                    <span class="event-date-month">DEC</span>
+                  </div>
+                  <div class="event-list-details">
+                    <div class="event-list-title-row">
+                      <h4 class="event-list-title">Techfest 2026 — IIT Bombay</h4>
+                      <span class="nb-tag nb-tag-gold" style="font-size: 0.68rem;">30TH EDITION</span>
+                    </div>
+                    <div class="event-list-meta">
+                      <span>[📅] 16–18 Dec 2026</span>
+                      <span class="meta-dot">·</span>
+                      <span>[⏳] Apply by: ~Nov 2026</span>
+                      <span class="meta-dot">·</span>
+                      <span>[🤖] International Hackathons &amp; Robowars</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-list-right">
+                  <span class="nb-tag nb-tag-gold">IIT Bombay</span>
+                </div>
+              </div>
+
+              <!-- Hackathon 3: KDSH 2027 — IIT Kharagpur -->
+              <div class="nb-card event-list-item event-accent-aqua">
+                <div class="event-list-left">
+                  <div class="event-date-badge">
+                    <span class="event-date-day">JAN</span>
+                    <span class="event-date-month">2027</span>
+                  </div>
+                  <div class="event-list-details">
+                    <div class="event-list-title-row">
+                      <h4 class="event-list-title">Kharagpur Data Science Hackathon (KDSH 2027)</h4>
+                      <span class="nb-tag nb-tag-aqua" style="font-size: 0.68rem;">DATA SCIENCE</span>
+                    </div>
+                    <div class="event-list-meta">
+                      <span>[📅] ~Mid-Jan 2027</span>
+                      <span class="meta-dot">·</span>
+                      <span>[⏳] Apply by: ~2nd Wk Jan 2027</span>
+                      <span class="meta-dot">·</span>
+                      <span>[🏆] ₹4,00,000 Prize Pool</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-list-right">
+                  <span class="nb-tag nb-tag-aqua">IIT Kharagpur</span>
+                </div>
+              </div>
+
+              <!-- Hackathon 4: HACK IITK 2027 -->
+              <div class="nb-card event-list-item event-accent-red">
+                <div class="event-list-left">
+                  <div class="event-date-badge">
+                    <span class="event-date-day">APR</span>
+                    <span class="event-date-month">2027</span>
+                  </div>
+                  <div class="event-list-details">
+                    <div class="event-list-title-row">
+                      <h4 class="event-list-title">HACK IITK 2027 — Global Cybersecurity</h4>
+                      <span class="nb-tag nb-tag-red" style="font-size: 0.68rem;">CYBERSECURITY</span>
+                    </div>
+                    <div class="event-list-meta">
+                      <span>[📅] Grand Finale: ~Apr 2027</span>
+                      <span class="meta-dot">·</span>
+                      <span>[⏳] Apply by: ~Jan 2027</span>
+                      <span class="meta-dot">·</span>
+                      <span>[🏆] ₹30L+ Prize Pool (Cash + AWS + Certs)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-list-right">
+                  <span class="nb-tag nb-tag-red">IIT Kanpur</span>
+                </div>
+              </div>
+
+              <!-- Hackathon 5: Microsoft Imagine Cup 2027 -->
+              <div class="nb-card event-list-item event-accent-gold">
+                <div class="event-list-left">
+                  <div class="event-date-badge">
+                    <span class="event-date-day">MAY</span>
+                    <span class="event-date-month">2027</span>
+                  </div>
+                  <div class="event-list-details">
+                    <div class="event-list-title-row">
+                      <h4 class="event-list-title">Microsoft Imagine Cup 2027</h4>
+                      <span class="nb-tag nb-tag-gold" style="font-size: 0.68rem;">GLOBAL CHAMPIONSHIP</span>
+                    </div>
+                    <div class="event-list-meta">
+                      <span>[📅] World Finals: ~May 2027</span>
+                      <span class="meta-dot">·</span>
+                      <span>[⏳] Apply by: ~5 Jan 2027</span>
+                      <span class="meta-dot">·</span>
+                      <span>[🏆] $100K + Azure Credits &amp; Mentorship</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-list-right">
+                  <span class="nb-tag nb-tag-gold">Microsoft</span>
+                </div>
+              </div>
+
+              <!-- See More Hackathons Action Bar -->
+              <div class="hackathons-see-more-bar" style="margin-top: 1.75rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <button id="open-hackathons-modal-btn" class="nb-btn nb-btn-primary" style="font-size: 0.95rem; padding: 0.75rem 1.75rem;" aria-haspopup="dialog" aria-controls="hackathons-modal">
+                  [📂] SEE MORE HACKATHONS (FULL DIRECTORY) ↗
+                </button>
+                <span class="font-mono" style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.65rem;">
+                  [📊 Access full calendars &amp; 35+ national/global hackathons compiled in 2 Master Excel workbooks]
+                </span>
+              </div>
+            </div>
           </div>
 
           <!-- Hackathon Support Strip -->
-          <div class="nb-card nb-card-accent-gold" style="margin-top: 1.5rem;">
-            <div class="nb-card-body" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.1rem 1.5rem;">
-              <h4 class="font-pixel" style="font-size: 0.95rem; color: var(--dragon-gold); margin: 0;">
-                Fielding a Hackathon or Robotics Squad?
-              </h4>
+          <div class="nb-card nb-card-accent-gold" style="margin-top: 2.5rem;">
+            <div class="nb-card-body" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1.25rem 1.75rem;">
+              <div>
+                <h4 class="font-pixel" style="font-size: 1rem; color: var(--dragon-gold); margin: 0 0 0.35rem 0;">
+                  Fielding a Hackathon or Robotics Squad?
+                </h4>
+                <p class="font-mono" style="font-size: 0.82rem; color: var(--text-white); margin: 0;">
+                  EECS Club provides hardware inventory loans, compute support, and senior mentorship for verified student teams.
+                </p>
+              </div>
               <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
                 <a href="https://wa.me/?text=Hi%20EECS%20Club%2C%20we%20are%20requesting%20team%20support%20for%20our%20hackathon%20%2F%20robotics%20squad." target="_blank" rel="noopener noreferrer" class="nb-btn nb-btn-green nb-btn-sm">
                   [💬] WhatsApp Us
@@ -493,15 +599,15 @@
       </section>
 
       <!-- ====================================================================
-           6. UPCOMING EVENTS SECTION (#events)
+           5. CLUB EVENTS & SESSIONS SECTION (#events)
            ==================================================================== -->
       <section id="events" class="section">
         <div class="container">
 
           <div class="section-header">
-            <div class="section-tag">// 0x04_SCHEDULE</div>
+            <div class="section-tag">// 0x03_CAMPUS_SCHEDULE</div>
             <h2 class="retro-title">Upcoming <span data-scramble style="color: var(--dragon-gold);">Events</span></h2>
-            <p class="retro-subtitle">Workshops, talks, sessions, and orientations organized by the EECS Club.</p>
+            <p class="retro-subtitle">Workshops, talks, technical training sessions, and orientations organized by EECS Club at IISER Bhopal.</p>
           </div>
 
           <!-- Minimal Events List -->
@@ -589,170 +695,17 @@
 
           </div>
 
-          <!-- Upcoming Hackathons Subsection -->
-          <div style="margin-top: 3.5rem;">
-            <div class="section-header" style="margin-bottom: 2rem;">
-              <div class="section-tag">// 0x04_EXTERNAL_CIRCUITS</div>
-              <h3 class="retro-title" style="font-size: 1.35rem;">Upcoming <span data-scramble style="color: var(--dragon-aqua);">Hackathons</span></h3>
-              <p class="retro-subtitle">Curated national and global hackathons for EECS squads to target.</p>
-            </div>
-
-            <div class="events-minimal-list">
-
-              <!-- Hackathon 1: iQOO City Battles -->
-              <div class="nb-card event-list-item event-accent-red">
-                <div class="event-list-left">
-                  <div class="event-date-badge">
-                    <span class="event-date-day">26-27</span>
-                    <span class="event-date-month">SEP</span>
-                  </div>
-                  <div class="event-list-details">
-                    <div class="event-list-title-row">
-                      <h3 class="event-list-title">iQOO City Battles — On-Device AI</h3>
-                      <span class="nb-tag nb-tag-red" style="font-size: 0.68rem;">ON-DEVICE AI</span>
-                    </div>
-                    <div class="event-list-meta">
-                      <span>[📅] 26–27 Sep 2026</span>
-                      <span class="meta-dot">·</span>
-                      <span>[⚡] Edge AI &amp; Hardware-Software Co-Optimization</span>
-                      <span class="meta-dot">·</span>
-                      <span>[🏆] Bengaluru Grand Finale</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="event-list-right">
-                  <span class="nb-tag nb-tag-dark">Rolling / Multi-City</span>
-                </div>
-              </div>
-
-              <!-- Hackathon 2: Techfest 2026 — IIT Bombay -->
-              <div class="nb-card event-list-item event-accent-gold">
-                <div class="event-list-left">
-                  <div class="event-date-badge">
-                    <span class="event-date-day">16-18</span>
-                    <span class="event-date-month">DEC</span>
-                  </div>
-                  <div class="event-list-details">
-                    <div class="event-list-title-row">
-                      <h3 class="event-list-title">Techfest 2026 — IIT Bombay</h3>
-                      <span class="nb-tag nb-tag-gold" style="font-size: 0.68rem;">30TH EDITION</span>
-                    </div>
-                    <div class="event-list-meta">
-                      <span>[📅] 16–18 Dec 2026</span>
-                      <span class="meta-dot">·</span>
-                      <span>[⏳] Apply by: ~Nov 2026</span>
-                      <span class="meta-dot">·</span>
-                      <span>[🤖] International Hackathons &amp; Robowars</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="event-list-right">
-                  <span class="nb-tag nb-tag-gold">IIT Bombay</span>
-                </div>
-              </div>
-
-              <!-- Hackathon 3: KDSH 2027 — IIT Kharagpur -->
-              <div class="nb-card event-list-item event-accent-aqua">
-                <div class="event-list-left">
-                  <div class="event-date-badge">
-                    <span class="event-date-day">JAN</span>
-                    <span class="event-date-month">2027</span>
-                  </div>
-                  <div class="event-list-details">
-                    <div class="event-list-title-row">
-                      <h3 class="event-list-title">Kharagpur Data Science Hackathon (KDSH 2027)</h3>
-                      <span class="nb-tag nb-tag-aqua" style="font-size: 0.68rem;">DATA SCIENCE</span>
-                    </div>
-                    <div class="event-list-meta">
-                      <span>[📅] ~Mid-Jan 2027</span>
-                      <span class="meta-dot">·</span>
-                      <span>[⏳] Apply by: ~2nd Wk Jan 2027</span>
-                      <span class="meta-dot">·</span>
-                      <span>[🏆] ₹4,00,000 Prize Pool</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="event-list-right">
-                  <span class="nb-tag nb-tag-aqua">IIT Kharagpur</span>
-                </div>
-              </div>
-
-              <!-- Hackathon 4: HACK IITK 2027 -->
-              <div class="nb-card event-list-item event-accent-red">
-                <div class="event-list-left">
-                  <div class="event-date-badge">
-                    <span class="event-date-day">APR</span>
-                    <span class="event-date-month">2027</span>
-                  </div>
-                  <div class="event-list-details">
-                    <div class="event-list-title-row">
-                      <h3 class="event-list-title">HACK IITK 2027 — Global Cybersecurity</h3>
-                      <span class="nb-tag nb-tag-red" style="font-size: 0.68rem;">CYBERSECURITY</span>
-                    </div>
-                    <div class="event-list-meta">
-                      <span>[📅] Grand Finale: ~Apr 2027</span>
-                      <span class="meta-dot">·</span>
-                      <span>[⏳] Apply by: ~Jan 2027</span>
-                      <span class="meta-dot">·</span>
-                      <span>[🏆] ₹30L+ Prize Pool (Cash + AWS + Certs)</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="event-list-right">
-                  <span class="nb-tag nb-tag-red">IIT Kanpur</span>
-                </div>
-              </div>
-
-              <!-- Hackathon 5: Microsoft Imagine Cup 2027 -->
-              <div class="nb-card event-list-item event-accent-gold">
-                <div class="event-list-left">
-                  <div class="event-date-badge">
-                    <span class="event-date-day">MAY</span>
-                    <span class="event-date-month">2027</span>
-                  </div>
-                  <div class="event-list-details">
-                    <div class="event-list-title-row">
-                      <h3 class="event-list-title">Microsoft Imagine Cup 2027</h3>
-                      <span class="nb-tag nb-tag-gold" style="font-size: 0.68rem;">GLOBAL CHAMPIONSHIP</span>
-                    </div>
-                    <div class="event-list-meta">
-                      <span>[📅] World Finals: ~May 2027</span>
-                      <span class="meta-dot">·</span>
-                      <span>[⏳] Apply by: ~5 Jan 2027</span>
-                      <span class="meta-dot">·</span>
-                      <span>[🏆] $100K + Azure Credits &amp; Mentorship</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="event-list-right">
-                  <span class="nb-tag nb-tag-gold">Microsoft</span>
-                </div>
-              </div>
-
-              <!-- See More Hackathons Action Bar -->
-              <div class="hackathons-see-more-bar" style="margin-top: 2.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                <button id="open-hackathons-modal-btn" class="nb-btn nb-btn-primary" style="font-size: 0.95rem; padding: 0.75rem 1.75rem;" aria-haspopup="dialog" aria-controls="hackathons-modal">
-                  [📂] SEE MORE HACKATHONS (FULL DIRECTORY) ↗
-                </button>
-                <span class="font-mono" style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.65rem;">
-                  [📊 Access full calendars &amp; 35+ national/global hackathons compiled in 2 Master Excel workbooks]
-                </span>
-              </div>
-
-            </div>
-          </div>
-
         </div>
       </section>
 
       <!-- ====================================================================
-           7. PROJECTS SECTION (#projects)
+           6. PROJECTS SECTION (#projects)
            ==================================================================== -->
       <section id="projects" class="section">
         <div class="container">
 
           <div class="section-header">
-            <div class="section-tag">// 0x05_SHOWCASE</div>
+            <div class="section-tag">// 0x04_SHOWCASE</div>
             <h2 class="retro-title">Our <span data-scramble style="color: var(--dragon-gold);">Projects</span></h2>
             <p class="retro-subtitle">Explore the innovative hardware, AI architectures, and software engineered by our members.</p>
           </div>
@@ -1068,14 +1021,14 @@
       </section>
 
       <!-- ====================================================================
-           8. TEAM SECTION (#team)
+           7. TEAM SECTION (#team)
            ==================================================================== -->
       <section id="team" class="section">
         <div class="container">
 
 
           <div class="section-header">
-            <div class="section-tag">// 0x06_CREW</div>
+            <div class="section-tag">// 0x05_CREW</div>
             <h2 class="retro-title">Meet Our <span data-scramble style="color: var(--dragon-gold);">Team</span></h2>
             <p class="retro-subtitle">The passionate individuals behind EECS Club who make everything possible.</p>
           </div>
@@ -1791,14 +1744,14 @@
         </div>
       </section>
 
-            <!-- ====================================================================
-           9. GALLERY & MOMENTS SECTION (#gallery)
+      <!-- ====================================================================
+           8. GALLERY & MOMENTS SECTION (#gallery)
            ==================================================================== -->
       <section id="gallery" class="section">
         <div class="container">
 
           <div class="section-header">
-            <div class="section-tag">// 0x07_ARCHIVE</div>
+            <div class="section-tag">// 0x06_ARCHIVE</div>
             <h2 class="retro-title">Visual <span data-scramble style="color: var(--dragon-gold);">Gallery</span></h2>
             <p class="retro-subtitle">A live chronological stream of club events, workshops, hackathons, and moments.</p>
           </div>
@@ -2073,48 +2026,76 @@
       </section>
 
       <!-- ====================================================================
-           10. RESOURCES HUB SECTION (#resources)
+           9. RESOURCES HUB SECTION (#resources)
            ==================================================================== -->
       <section id="resources" class="section">
         <div class="container">
 
 
           <div class="section-header">
-            <div class="section-tag">// 0x08_KNOWLEDGE_BASE</div>
+            <div class="section-tag">// 0x07_KNOWLEDGE_BASE</div>
             <h2 class="retro-title">Resources for <span data-scramble style="color: var(--dragon-gold);">EECS</span></h2>
             <p class="retro-subtitle">Curated learning materials, cheat sheets, and starter guides to help you get going.</p>
           </div>
 
-          <div class="resources-frame-container">
-            <iframe 
-              src="https://the-nyoodle-boii.notion.site/ebd/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14" 
-              class="resources-iframe"
-              loading="lazy"
-              title="EECS Resources Notion Database">
-            </iframe>
-          </div>
+          <div class="nb-card nb-card-accent-gold" style="max-width: 920px; margin: 0 auto;">
+            <div class="nb-card-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="nb-tag nb-tag-gold">CENTRAL REPOSITORY // NOTION VAULT</span>
+              <span class="font-mono" style="font-size: 0.75rem; color: var(--text-dim);">Updated Regularly</span>
+            </div>
+            <div class="nb-card-body" style="padding: 2.25rem 2rem;">
+              <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="max-width: 580px;">
+                  <h3 class="font-pixel" style="font-size: 1.3rem; color: var(--text-old-white); margin-bottom: 0.75rem;">
+                    EECS Technical Vault &amp; Curated Starter Packs
+                  </h3>
+                  <p style="font-size: 0.95rem; color: var(--text-white); line-height: 1.6; margin: 0;">
+                    Comprehensive open database maintained by club leads and seniors. Includes hardware component datasheets, robotics circuit guides, ML notebooks, and IISERB course starter packs.
+                  </p>
+                </div>
+                <a href="https://the-nyoodle-boii.notion.site/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="nb-btn nb-btn-primary" 
+                   style="white-space: nowrap; padding: 0.75rem 1.4rem;">
+                  [↗] Open Live Notion Vault
+                </a>
+              </div>
 
-          <div style="display: flex; justify-content: flex-end;">
-            <a href="https://the-nyoodle-boii.notion.site/26d7e86a586f8059b76dd60c1ed44412?v=26d7e86a586f80a39a66000ccfcceb14" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="nb-btn nb-btn-ghost nb-btn-sm">
-              [↗] Open Original Notion Page in New Tab
-            </a>
+              <!-- Vault Modules Grid -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+                <div style="background: var(--bg-deep-ink); border: 1px solid var(--border-color); padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                  <span style="font-size: 1.25rem;">[⚡]</span>
+                  <strong class="font-mono" style="font-size: 0.88rem; color: var(--dragon-gold);">Embedded &amp; Robotics</strong>
+                  <span style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">ESP32, STM32 pinouts, ROS2 packages, sensor calibrations, and motor drivers.</span>
+                </div>
+                <div style="background: var(--bg-deep-ink); border: 1px solid var(--border-color); padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                  <span style="font-size: 1.25rem;">[🧠]</span>
+                  <strong class="font-mono" style="font-size: 0.88rem; color: var(--dragon-aqua);">AI &amp; Data Science</strong>
+                  <span style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">PyTorch starter kits, Kaggle playbooks, LLM fine-tuning, and campus GPU cluster docs.</span>
+                </div>
+                <div style="background: var(--bg-deep-ink); border: 1px solid var(--border-color); padding: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                  <span style="font-size: 1.25rem;">[💻]</span>
+                  <strong class="font-mono" style="font-size: 0.88rem; color: var(--dragon-green-bright);">Web, Systems &amp; CP</strong>
+                  <span style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4;">Full-stack roadmaps, Docker configs, Git workflows, and competitive programming topics.</span>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
       </section>
 
       <!-- ====================================================================
-           11. JOIN US SECTION (#join)
+           10. JOIN US SECTION (#join)
            ==================================================================== -->
       <section id="join" class="section">
         <div class="container">
 
 
           <div class="section-header">
-            <div class="section-tag">// 0x09_RECRUITMENT</div>
+            <div class="section-tag">// 0x08_RECRUITMENT</div>
             <h2 class="retro-title">Join <span data-scramble style="color: var(--dragon-gold);">EECS Club</span></h2>
             <p class="retro-subtitle">Become a part of our community and explore the exciting world of technology.</p>
           </div>
@@ -2153,14 +2134,14 @@
       </section>
 
       <!-- ====================================================================
-           12. CONTACT & SOCIALS SECTION (#contact)
-           Club-wide communication point (member socials live on section 8 cards)
+           11. CONTACT & SOCIALS SECTION (#contact)
+           Club-wide communication point (member socials live on section 7 cards)
            ==================================================================== -->
       <section id="contact" class="section">
         <div class="container">
 
           <div class="section-header">
-            <div class="section-tag">// 0x0A_COMMUNICATION</div>
+            <div class="section-tag">// 0x09_COMMUNICATION</div>
             <h2 class="retro-title">Contact & <span data-scramble style="color: var(--dragon-gold);">Socials</span></h2>
             <p class="retro-subtitle">Club-wide official contact channels for inquiries, partnerships, and collaborations.</p>
           </div>

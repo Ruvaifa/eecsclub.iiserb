@@ -86,7 +86,7 @@
 
 @media (min-width: 821px) {
   .navbar {
-    top: 28px;
+    top: 0;
     height: 68px;
   }
 }

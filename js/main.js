@@ -25,7 +25,6 @@ function initApp() {
   const themeMenu = document.getElementById('theme-menu');
   const themeBtnIcon = document.getElementById('theme-btn-icon');
   const themeBtnLabel = document.getElementById('theme-btn-label');
-  const hudTheme = document.getElementById('hud-theme');
   const themeOptions = document.querySelectorAll('[data-set-theme]');
 
   function applyTheme(themeId) {
@@ -36,9 +35,6 @@ function initApp() {
     // Update Button Label & Icon in Navbar
     if (themeBtnIcon) themeBtnIcon.innerText = THEME_LABELS[themeId].icon;
     if (themeBtnLabel) themeBtnLabel.innerText = THEME_LABELS[themeId].name;
-
-    // Update HUD Telemetry indicator if present
-    if (hudTheme) hudTheme.innerText = THEME_LABELS[themeId].name;
 
     // Update active state on all theme buttons (navbar dropdown and mobile drawer)
     document.querySelectorAll('[data-set-theme]').forEach((opt) => {
