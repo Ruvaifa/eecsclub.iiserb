@@ -5,7 +5,6 @@
 
 import { initTextScramble, initCircuitCanvas, refreshCanvasTheme } from './reactbits.js';
 import { initAnimations } from './animations.js';
-import { terminalEasterEggs, siteConfig, coreTeam, projects } from './data.js';
 
 const THEME_LABELS = {
   'kanagawa': { icon: '🐲', name: 'KANAGAWA' },
@@ -97,8 +96,7 @@ function initApp() {
     });
   });
 
-  // 3. Interactive Retro Lore Terminal Console
-  initTerminalConsole(applyTheme);
+// (terminal console removed)
 
   // 4. Mobile Navigation Drawer
   const mobileToggle = document.getElementById('mobile-toggle');
@@ -231,91 +229,4 @@ if (document.readyState === 'loading') {
   initApp();
 }
 
-function initTerminalConsole(applyThemeFn) {
-  const terminalInput = document.getElementById('terminal-input');
-  const terminalOutput = document.getElementById('terminal-output');
-  const terminalChips = document.querySelectorAll('.lore-chip');
 
-  if (!terminalInput || !terminalOutput) return;
-
-  function runCommand(cmd) {
-    const raw = cmd.trim();
-    if (!raw) return;
-
-    const parts = raw.toLowerCase().split(' ');
-    const mainCmd = parts[0];
-    const arg = parts[1];
-
-    let response = '';
-
-    if (mainCmd === 'clear') {
-      terminalOutput.innerHTML = '';
-      terminalInput.value = '';
-      return;
-    } else if (mainCmd === 'help') {
-      response = terminalEasterEggs['help'];
-    } else if (mainCmd === 'lore') {
-      response = terminalEasterEggs['lore'];
-    } else if (mainCmd === 'whoami') {
-      response = terminalEasterEggs['whoami'];
-    } else if (mainCmd === 'contact') {
-      response = terminalEasterEggs['contact'];
-    } else if (mainCmd === 'team') {
-      response = `[EECS CLUB ROSTER SUMMARY // ${coreTeam.length} CORE MEMBERS]\n` +
-        coreTeam.map((m, i) => `  [#${(i+1).toString().padStart(2, '0')}] ${m.name.padEnd(22)} | ${m.role} (${m.department})`).join('\n');
-    } else if (mainCmd === 'projects') {
-      response = `[EECS CLUB ACTIVE PROJECTS]\n` +
-        projects.map((p) => `  • [${p.category.toUpperCase()}] ${p.title} (Lead: ${p.doneBy})`).join('\n');
-    } else if (mainCmd === 'stats') {
-      response = `[TELEMETRY STATS]\n` +
-        siteConfig.stats.map(s => `  ${s.label}: ${s.value}${s.suffix}`).join('\n');
-    } else if (mainCmd === 'theme') {
-      if (!arg) {
-        const current = document.documentElement.getAttribute('data-theme') || 'kanagawa';
-        const currentName = THEME_LABELS[current] ? THEME_LABELS[current].name : current;
-        response = `[THEME CONTROLLER // 5 RETRO COLOR PALETTES]\n` +
-          `Active Theme: ${currentName}\n\n` +
-          `Available Themes:\n` +
-          `  • kanagawa    [🐲] Kanagawa Dragon ink & gold (Default)\n` +
-          `  • tokyo-night [🌃] Cyberpunk neon blue & purple\n` +
-          `  • gruvbox     [📻] Retro hacker terminal amber & green\n` +
-          `  • nord        [❄️] Arctic frost cyan & polar slate\n` +
-          `  • acid        [⚡] Acid high-contrast cyber gold & coral\n\n` +
-          `Type: "theme <name>" (e.g. "theme tokyo-night") or use the navbar [🎨] dropdown.`;
-      } else if (THEME_LABELS[arg]) {
-        applyThemeFn(arg);
-        response = `[SUCCESS] Theme palette switched to "${THEME_LABELS[arg].name}" ${THEME_LABELS[arg].icon}.\nDisplay variables, CSS styles, and circuit canvas recalibrated.`;
-      } else {
-        response = `[ERROR] Unknown theme: "${arg}".\nAvailable: kanagawa, tokyo-night, gruvbox, nord, acid`;
-      }
-    } else {
-      response = `Command not found: "${raw}". Type "help" for available commands.`;
-    }
-
-    const commandBlock = document.createElement('div');
-    commandBlock.className = 'lore-terminal-output';
-    commandBlock.innerHTML = `<span style="color: var(--dragon-gold); font-weight: 700;">guest@iiserb:~$</span> ${escapeHtml(raw)}\n<span style="color: var(--text-white);">${escapeHtml(response)}</span>`;
-    terminalOutput.appendChild(commandBlock);
-
-    terminalInput.value = '';
-    const screen = terminalOutput.parentElement;
-    screen.scrollTop = screen.scrollHeight;
-  }
-
-  terminalInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      runCommand(terminalInput.value);
-    }
-  });
-
-  terminalChips.forEach((chip) => {
-    chip.addEventListener('click', () => {
-      const cmd = chip.getAttribute('data-cmd');
-      runCommand(cmd);
-    });
-  });
-}
-
-function escapeHtml(str) {
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
