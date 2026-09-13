@@ -117,45 +117,23 @@ export const coreTeam = [
     year: "Core Member",
     image: "assets/koustav_patra.webp",
     bio: "Leading social media, outreach, and digital presence for EECS Club.",
+    badge: "[📱 Soc-Med Head]",
     github: null,
     linkedin: null,
     email: null
   },
   {
     name: "Madhu",
-    role: "Design Lead",
-    clearance: "LEVEL_2 // LEAD",
+    role: "Design Head",
+    clearance: "LEVEL_2 // HEAD",
     department: "Engineering Science",
     year: "2nd Year",
     image: "assets/madhu.webp",
     bio: "all here for the thrill of it, cause at the end of the day it’s all small and big potatoes",
+    badge: "[🎨 Design Head]",
     github: "https://github.com/KHUSHIk4",
     linkedin: "https://www.linkedin.com/in/madhusmita-kisku-a63b9324a",
     email: "madhusmita25@iiserb.ac.in"
-  },
-  {
-    name: "Yash Upadhyay",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Engineering Science",
-    year: "2nd Year",
-    image: "assets/yash_upadhyay.webp",
-    bio: "hi! this is yash! a professional yapper now also part of the EECS club core lmao. Give me a steering wheel and some chhole kulche and i'm genuinely the happiest person alive, also yes I doomscroll YouTube way more than I should. i code in python, mess around with hardware on the side, and i'm way too excited to actually do stuff with this club this year 🔧",
-    github: null,
-    linkedin: null,
-    email: "yashu25@iiserb.ac.in"
-  },
-  {
-    name: "Anubhav Gupta",
-    role: "Core Committee",
-    clearance: "LEVEL_2 // CORE",
-    department: "Data Science and Engineering",
-    year: "2nd Year",
-    image: "assets/anubhav_gupta.webp",
-    bio: "I’m Anubhav Gupta a 2nd-year DSE major barely surviving this dual degree on pure delusion. Between ultra pro max homesickness and side-questing in Vaibhav Sir’s GeoAI lab, I’m mostly just counting down the days until I can go home. Hit me up if you need survival hacks or just want to vent",
-    github: "https://github.com/ganubhav8922",
-    linkedin: "https://www.linkedin.com/in/anubhavgupta13",
-    email: "anubhav25@iiserb.ac.in"
   },
   {
     name: "Gourangi Verma",
@@ -372,6 +350,30 @@ export const coreTeam = [
     github: "https://github.com/ArinPal",
     linkedin: "https://www.linkedin.com/in/arin-pal-8a2a53201?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     email: "arin25@iiserb.ac.in"
+  },
+  {
+    name: "Anubhav Gupta",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Data Science and Engineering",
+    year: "2nd Year",
+    image: "assets/anubhav_gupta.webp",
+    bio: "I’m Anubhav Gupta a 2nd-year DSE major barely surviving this dual degree on pure delusion. Between ultra pro max homesickness and side-questing in Vaibhav Sir’s GeoAI lab, I’m mostly just counting down the days until I can go home. Hit me up if you need survival hacks or just want to vent",
+    github: "https://github.com/ganubhav8922",
+    linkedin: "https://www.linkedin.com/in/anubhavgupta13",
+    email: "anubhav25@iiserb.ac.in"
+  },
+  {
+    name: "Yash Upadhyay",
+    role: "Core Committee",
+    clearance: "LEVEL_2 // CORE",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/yash_upadhyay.webp",
+    bio: "hi! this is yash! a professional yapper now also part of the EECS club core lmao. Give me a steering wheel and some chhole kulche and i'm genuinely the happiest person alive, also yes I doomscroll YouTube way more than I should. i code in python, mess around with hardware on the side, and i'm way too excited to actually do stuff with this club this year 🔧",
+    github: null,
+    linkedin: null,
+    email: "yashu25@iiserb.ac.in"
   }
 ];
 
