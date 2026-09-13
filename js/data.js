@@ -72,11 +72,11 @@ export const coordinators = [
     clearance: "LEVEL_1 // COORDINATOR",
     department: "Electrical Engineering and Computer Science",
     year: "3rd Year",
-    image: "assets/avatar_placeholder.svg",
+    image: "assets/sourish_bhat.webp",
     bio: "Coordinator at EECS Club, steering technical operations, workshops, and engineering initiatives.",
-    github: null,
-    linkedin: null,
-    email: null
+    github: "https://github.com/sourishbhat",
+    linkedin: "https://www.linkedin.com/in/sourishbhat",
+    email: "sourish25@iiserb.ac.in"
   }
 ];
 
