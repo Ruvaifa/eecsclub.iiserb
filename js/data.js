@@ -9,7 +9,7 @@ export const siteConfig = {
   tagline: "Power the Future. Design Circuits. Engineer Tomorrow.",
   founded: "2024",
   email: "eecs.club.official@gmail.com",
-  developer: "Shafwan Safi",
+  developer: "Ruvaifa and Nikhil",
   analyticsId: "G-FL0HJXGSVH",
   socials: {
     linkedin: "https://www.linkedin.com/company/eecsclub-iiserb/posts/?feedView=all",
