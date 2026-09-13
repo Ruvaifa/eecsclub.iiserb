@@ -110,6 +110,30 @@ export const studentAdvisors = [
 
 export const coreTeam = [
   {
+    name: "Koustav Patra",
+    role: "Soc-Med Head",
+    clearance: "LEVEL_2 // HEAD",
+    department: "Electrical Engineering and Computer Science",
+    year: "Core Member",
+    image: "assets/koustav_patra.webp",
+    bio: "Leading social media, outreach, and digital presence for EECS Club.",
+    github: null,
+    linkedin: null,
+    email: null
+  },
+  {
+    name: "Madhu",
+    role: "Design Lead",
+    clearance: "LEVEL_2 // LEAD",
+    department: "Engineering Science",
+    year: "2nd Year",
+    image: "assets/madhu.webp",
+    bio: "all here for the thrill of it, cause at the end of the day it’s all small and big potatoes",
+    github: "https://github.com/KHUSHIk4",
+    linkedin: "https://www.linkedin.com/in/madhusmita-kisku-a63b9324a",
+    email: "madhusmita25@iiserb.ac.in"
+  },
+  {
     name: "Yash Upadhyay",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
@@ -218,18 +242,6 @@ export const coreTeam = [
     email: "shubh24@iiserb.ac.in"
   },
   {
-    name: "Madhu",
-    role: "Design Lead",
-    clearance: "LEVEL_2 // LEAD",
-    department: "Engineering Science",
-    year: "2nd Year",
-    image: "assets/madhu.webp",
-    bio: "all here for the thrill of it, cause at the end of the day it’s all small and big potatoes",
-    github: "https://github.com/KHUSHIk4",
-    linkedin: "https://www.linkedin.com/in/madhusmita-kisku-a63b9324a",
-    email: "madhusmita25@iiserb.ac.in"
-  },
-  {
     name: "Aryan Sanjot Singh",
     role: "Core Committee",
     clearance: "LEVEL_2 // CORE",
@@ -252,18 +264,6 @@ export const coreTeam = [
     github: "https://github.com/marchastha27-cell",
     linkedin: "https://www.linkedin.com/in/astha-mishra-006a023b0/",
     email: "astham25@iiserb.ac.in"
-  },
-  {
-    name: "Koustav Patra",
-    role: "Soc-Med Head",
-    clearance: "LEVEL_2 // HEAD",
-    department: "Electrical Engineering and Computer Science",
-    year: "Core Member",
-    image: "assets/koustav_patra.webp",
-    bio: "Leading social media, outreach, and digital presence for EECS Club.",
-    github: null,
-    linkedin: null,
-    email: null
   },
   {
     name: "Nandini Madan",
