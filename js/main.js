@@ -99,25 +99,30 @@ function initApp() {
   const mobileDrawer = document.getElementById('mobile-drawer');
 
   if (mobileToggle && mobileDrawer) {
+    const HAMBURGER_SVG = `<svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>`;
+    const CLOSE_SVG = `<svg class="hamburger-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+
+    const setToggleState = (isOpen) => {
+      mobileToggle.setAttribute('aria-expanded', isOpen);
+      mobileToggle.innerHTML = isOpen ? CLOSE_SVG : HAMBURGER_SVG;
+    };
+
     mobileToggle.addEventListener('click', () => {
       const isOpen = mobileDrawer.classList.toggle('open');
-      mobileToggle.setAttribute('aria-expanded', isOpen);
-      mobileToggle.innerText = isOpen ? '[✕] CLOSE' : '[☰] MENU';
+      setToggleState(isOpen);
     });
 
     mobileDrawer.querySelectorAll('.nav-link').forEach((link) => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
-        mobileToggle.innerText = '[☰] MENU';
-        mobileToggle.setAttribute('aria-expanded', 'false');
+        setToggleState(false);
       });
     });
 
     document.addEventListener('click', (e) => {
       if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !mobileToggle.contains(e.target)) {
         mobileDrawer.classList.remove('open');
-        mobileToggle.innerText = '[☰] MENU';
-        mobileToggle.setAttribute('aria-expanded', 'false');
+        setToggleState(false);
       }
     });
   }

@@ -270,9 +270,25 @@
   background: var(--bg-surface);
   border: 2px solid var(--border-color);
   color: var(--text-white);
-  padding: 0.45rem 0.75rem;
+  padding: 0;
+  width: 38px;
+  height: 38px;
   cursor: pointer;
   box-shadow: 2px 2px 0px var(--border-dark);
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.mobile-nav-toggle:hover,
+.mobile-nav-toggle:active {
+  background-color: var(--bg-surface-raised);
+  border-color: var(--dragon-gold);
+}
+
+.mobile-nav-toggle svg {
+  display: block;
 }
 
 .mobile-nav-drawer {
@@ -289,7 +305,8 @@
   background-color: var(--bg-surface);
   border-bottom: 3px solid var(--dragon-red);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.85);
-  padding: 1.25rem 1.25rem 2.25rem 1.25rem;
+  padding: 1.25rem 1.25rem 3.5rem 1.25rem;
+  overscroll-behavior: contain;
   display: none;
   flex-direction: column;
   gap: 0.75rem;
@@ -2261,7 +2278,7 @@
     display: none;
   }
   .mobile-nav-toggle {
-    display: block;
+    display: inline-flex;
   }
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2323,19 +2340,27 @@
   .nav-actions .nb-btn-primary {
     display: none !important;
   }
+  #theme-btn-label,
   .theme-btn-label,
   .theme-btn-arrow {
     display: none !important;
   }
   .theme-btn-current {
-    padding: 0.35rem 0.55rem;
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     gap: 0;
+    flex-shrink: 0;
   }
   .nav-sub-chip {
     display: none;
   }
   .nav-container {
     padding: 0 1rem;
+    gap: 0.5rem;
   }
   .hero-stats-strip {
     grid-template-columns: repeat(2, 1fr);
